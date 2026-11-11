@@ -12,6 +12,7 @@ import {
 import { HOTEL_INFO } from '../data/hotelData.ts';
 import { QuickBookingWidget } from './QuickBookingWidget.tsx';
 import { RoomCategory } from '../types/hotel.ts';
+import { getAssetUrl } from '../utils/assets.ts';
 
 interface HeroSectionProps {
   onOpenBookingModal: (roomTypeId?: string) => void;
@@ -45,7 +46,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
       {/* Background Image with Measured Contrast Scrim */}
       <div className="absolute inset-0">
         <img
-          src="/src/assets/images/hero_kashmir_mountain_resort_1794390221174.jpg"
+          src={getAssetUrl('assets/images/hero_kashmir_mountain_resort_1794390221174.jpg')}
           alt="Pahadon Ka Ghar Kashmir mountain chalet retreat"
           referrerPolicy="no-referrer"
           className="w-full h-full object-cover object-center scale-105 transition-transform duration-1000"

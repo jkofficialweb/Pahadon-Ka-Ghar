@@ -11,6 +11,7 @@ import {
   Building,
 } from 'lucide-react';
 import { TRAINING_COURSES, HOTEL_INFO } from '../data/hotelData.ts';
+import { getAssetUrl } from '../utils/assets.ts';
 
 export const SkillAcademyView: React.FC = () => {
   const [inquiryName, setInquiryName] = useState('');
@@ -77,7 +78,7 @@ export const SkillAcademyView: React.FC = () => {
         <div className="space-y-3">
           <div className="aspect-16/10 rounded-2xl overflow-hidden bg-amber-950 border border-amber-800 shadow-md">
             <img
-              src="/assets/hotel/real_training_class.jpg"
+              src={getAssetUrl('assets/hotel/real_training_class.jpg')}
               alt="Practical hospitality training at Pahadon Ka Ghar"
               referrerPolicy="no-referrer"
               className="w-full h-full object-cover"

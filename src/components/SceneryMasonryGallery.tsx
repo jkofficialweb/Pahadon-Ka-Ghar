@@ -12,6 +12,7 @@ import {
   Home,
   SunMedium,
 } from 'lucide-react';
+import { getAssetUrl } from '../utils/assets.ts';
 
 export interface GalleryItem {
   id: string;
@@ -33,7 +34,7 @@ const GALLERY_ITEMS: GalleryItem[] = [
     location: 'Pahadon Ka Ghar Garden, Hariganiwan',
     description:
       'Charming outdoor seating framed by blooming climbing roses, morning tea tables, and an unobstructed panorama of the snowy Himalayan peaks.',
-    image: '/src/assets/images/resort_garden_flower_patio_1794396328547.jpg',
+    image: getAssetUrl('assets/images/resort_garden_flower_patio_1794396328547.jpg'),
     aspectClass: 'aspect-3/4',
   },
   {
@@ -44,7 +45,7 @@ const GALLERY_ITEMS: GalleryItem[] = [
     location: 'Sindh River Trail (350m from resort)',
     description:
       'Glacial torrents meandering over smooth riverbed stones, surrounded by aromatic fir forests, wild lupines, and fresh morning Himalayan mist.',
-    image: '/src/assets/images/hariganiwan_morning_river_1794396327876.jpg',
+    image: getAssetUrl('assets/images/hariganiwan_morning_river_1794396327876.jpg'),
     aspectClass: 'aspect-4/3',
   },
   {
@@ -55,7 +56,7 @@ const GALLERY_ITEMS: GalleryItem[] = [
     location: 'Hariganiwan Mountain Hamlet, Kangan',
     description:
       'Centuries-old Kashmiri wooden houses with sloping slate roofs nestled among terraced walnut groves and wooden bridges over mountain streams.',
-    image: '/src/assets/images/kashmiri_village_orchard_1794396329655.jpg',
+    image: getAssetUrl('assets/images/kashmiri_village_orchard_1794396329655.jpg'),
     aspectClass: 'aspect-16/9',
   },
   {
@@ -66,7 +67,7 @@ const GALLERY_ITEMS: GalleryItem[] = [
     location: 'Evening Bonfire Circle, Resort Lawn',
     description:
       'Warm wood-fired campfire gathering under clear star-filled mountain skies with fairy-lit gazebos, warm blankets, and hot saffron Kahwa.',
-    image: '/src/assets/images/resort_evening_bonfire_lawn_1794396330027.jpg',
+    image: getAssetUrl('assets/images/resort_evening_bonfire_lawn_1794396330027.jpg'),
     aspectClass: 'aspect-4/3',
   },
   {
@@ -77,7 +78,7 @@ const GALLERY_ITEMS: GalleryItem[] = [
     location: 'Old Sonamarg Road, Hariganiwan',
     description:
       'The scenic timber facade of Pahadon Ka Ghar surrounded by flower beds, stone paths, and pine-clad mountain amphitheater.',
-    image: '/src/assets/images/hero_kashmir_mountain_resort_1794390221174.jpg',
+    image: getAssetUrl('assets/images/hero_kashmir_mountain_resort_1794390221174.jpg'),
     aspectClass: 'aspect-16/10',
   },
   {
@@ -88,7 +89,7 @@ const GALLERY_ITEMS: GalleryItem[] = [
     location: 'Outdoor Tea Patio, Pahadon Ka Ghar',
     description:
       'Handcrafted brass samovar pouring steaming golden saffron tea garnished with almonds and fresh Kashmiri Girda bread against the mountains.',
-    image: '/src/assets/images/kashmiri_kahwa_tea_table_1794390222933.jpg',
+    image: getAssetUrl('assets/images/kashmiri_kahwa_tea_table_1794390222933.jpg'),
     aspectClass: 'aspect-4/3',
   },
   {
@@ -99,7 +100,7 @@ const GALLERY_ITEMS: GalleryItem[] = [
     location: 'Resort Front Balconies & Green Lawns',
     description:
       'Direct on-site snapshot of our peaceful green lawns, flower beds, and wooden sit-out balconies facing the valley.',
-    image: '/assets/hotel/real_exterior_lawns.jpg',
+    image: getAssetUrl('assets/hotel/real_exterior_lawns.jpg'),
     aspectClass: 'aspect-16/10',
   },
   {
@@ -110,7 +111,7 @@ const GALLERY_ITEMS: GalleryItem[] = [
     location: 'Upper Sindh Valley (32 km excursion)',
     description:
       'Breathtaking turquoise mountain river sweeping through golden alpine meadows with horse riders under jagged snow walls.',
-    image: '/src/assets/images/sonamarg_thajiwas_glacier_1794390222847.jpg',
+    image: getAssetUrl('assets/images/sonamarg_thajiwas_glacier_1794390222847.jpg'),
     aspectClass: 'aspect-16/9',
   },
 ];

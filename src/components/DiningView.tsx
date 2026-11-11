@@ -12,6 +12,7 @@ import {
 } from 'lucide-react';
 import { WAZWAN_DISHES, HOTEL_INFO } from '../data/hotelData.ts';
 import { WazwanDish } from '../types/hotel.ts';
+import { getAssetUrl } from '../utils/assets.ts';
 
 export const DiningView: React.FC = () => {
   const [filter, setFilter] = useState<'all' | 'wazwan' | 'tea_bread' | 'veg' | 'non_veg'>('all');
@@ -113,7 +114,7 @@ export const DiningView: React.FC = () => {
 
         <div className="relative min-h-[320px] bg-stone-800">
           <img
-            src="/src/assets/images/kashmiri_kahwa_tea_table_1794390222933.jpg"
+            src={getAssetUrl('assets/images/kashmiri_kahwa_tea_table_1794390222933.jpg')}
             alt="Traditional Kashmiri Kahwa samovar poured into cups"
             referrerPolicy="no-referrer"
             className="w-full h-full object-cover"
@@ -203,7 +204,7 @@ export const DiningView: React.FC = () => {
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
           <div className="rounded-xl overflow-hidden aspect-4/3 bg-stone-200 shadow-xs">
             <img
-              src="/assets/hotel/real_wazwan_thali.jpg"
+              src={getAssetUrl('assets/hotel/real_wazwan_thali.jpg')}
               alt="Traditional Kashmiri Wazwan Thali"
               referrerPolicy="no-referrer"
               className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
@@ -211,7 +212,7 @@ export const DiningView: React.FC = () => {
           </div>
           <div className="rounded-xl overflow-hidden aspect-4/3 bg-stone-200 shadow-xs">
             <img
-              src="/assets/hotel/real_noon_chai_bread.jpg"
+              src={getAssetUrl('assets/hotel/real_noon_chai_bread.jpg')}
               alt="Noon Chai with Kashmiri bread"
               referrerPolicy="no-referrer"
               className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
@@ -219,7 +220,7 @@ export const DiningView: React.FC = () => {
           </div>
           <div className="rounded-xl overflow-hidden aspect-4/3 bg-stone-200 shadow-xs">
             <img
-              src="/assets/hotel/real_lawn_sitting.jpg"
+              src={getAssetUrl('assets/hotel/real_lawn_sitting.jpg')}
               alt="Outdoor lawn dining"
               referrerPolicy="no-referrer"
               className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
@@ -227,7 +228,7 @@ export const DiningView: React.FC = () => {
           </div>
           <div className="rounded-xl overflow-hidden aspect-4/3 bg-stone-200 shadow-xs">
             <img
-              src="/assets/hotel/real_family_dining.jpg"
+              src={getAssetUrl('assets/hotel/real_family_dining.jpg')}
               alt="Family dining at Pahadon Ka Ghar"
               referrerPolicy="no-referrer"
               className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"

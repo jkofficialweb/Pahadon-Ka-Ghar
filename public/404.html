@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Pahadon Ka Ghar - Mountain Retreat Kashmir</title>
+    <script type="text/javascript">
+      // GitHub Pages Single Page Application redirect script
+      // Preserves path and query string when redirecting to index.html
+      var pathSegmentsToKeep = 0;
+      var l = window.location;
+      var origin = l.origin;
+      var pathname = l.pathname;
+      var search = l.search;
+      var hash = l.hash;
+
+      // Redirect back to base index.html
+      window.location.replace(
+        origin + pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/index.html' +
+        (search ? search : '') +
+        (hash ? hash : '')
+      );
+    </script>
+  </head>
+  <body>
+    <p>Navigating to Pahadon Ka Ghar Mountain Retreat...</p>
+  </body>
+</html>

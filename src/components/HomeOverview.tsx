@@ -16,6 +16,7 @@ import { FAQAccordion } from './FAQAccordion.tsx';
 import { LocalExperiencesSection } from './LocalExperiencesSection.tsx';
 import { RoomCategory } from '../types/hotel.ts';
 import { formatINR } from '../utils/booking.ts';
+import { getAssetUrl } from '../utils/assets.ts';
 
 interface HomeOverviewProps {
   onOpenBookingModal: (roomTypeId?: string) => void;
@@ -157,7 +158,7 @@ export const HomeOverview: React.FC<HomeOverviewProps> = ({
           <div className="grid grid-cols-2 gap-3.5">
             <div className="rounded-2xl overflow-hidden aspect-4/3 bg-stone-100 shadow-xs">
               <img
-                src="/assets/hotel/real_exterior_lawns.jpg"
+                src={getAssetUrl('assets/hotel/real_exterior_lawns.jpg')}
                 alt="Hotel exterior and lush lawns"
                 referrerPolicy="no-referrer"
                 className="w-full h-full object-cover hover:scale-103 transition-transform duration-500"
@@ -165,7 +166,7 @@ export const HomeOverview: React.FC<HomeOverviewProps> = ({
             </div>
             <div className="rounded-2xl overflow-hidden aspect-4/3 bg-stone-100 shadow-xs">
               <img
-                src="/src/assets/images/room_kashmiri_wood_suite_1794390221069.jpg"
+                src={getAssetUrl('assets/images/room_kashmiri_wood_suite_1794390221069.jpg')}
                 alt="Cozy cedar wood bedroom suite"
                 referrerPolicy="no-referrer"
                 className="w-full h-full object-cover hover:scale-103 transition-transform duration-500"
@@ -173,7 +174,7 @@ export const HomeOverview: React.FC<HomeOverviewProps> = ({
             </div>
             <div className="rounded-2xl overflow-hidden aspect-4/3 bg-stone-100 shadow-xs">
               <img
-                src="/src/assets/images/kashmiri_kahwa_tea_table_1794390222933.jpg"
+                src={getAssetUrl('assets/images/kashmiri_kahwa_tea_table_1794390222933.jpg')}
                 alt="Kashmiri Kahwa tea in garden"
                 referrerPolicy="no-referrer"
                 className="w-full h-full object-cover hover:scale-103 transition-transform duration-500"
@@ -181,7 +182,7 @@ export const HomeOverview: React.FC<HomeOverviewProps> = ({
             </div>
             <div className="rounded-2xl overflow-hidden aspect-4/3 bg-stone-100 shadow-xs">
               <img
-                src="/assets/hotel/real_sindh_river.jpg"
+                src={getAssetUrl('assets/hotel/real_sindh_river.jpg')}
                 alt="Sindh river flowing in Kashmir"
                 referrerPolicy="no-referrer"
                 className="w-full h-full object-cover hover:scale-103 transition-transform duration-500"
