@@ -11,7 +11,6 @@ import { Footer } from './components/Footer.tsx';
 import { INITIAL_BOOKINGS, HOTEL_INFO } from './data/hotelData.ts';
 import { Booking, BookingStatus, RoomCategory } from './types/hotel.ts';
 import { MessageCircle, Phone, ArrowUp } from 'lucide-react';
-import { OfflineIndicator } from './components/OfflineIndicator.tsx';
 
 export default function App() {
   // Navigation tab state (supports URL hash e.g. #rooms, #management)
@@ -195,9 +194,6 @@ export default function App() {
         onBookingConfirmed={handleBookingConfirmed}
         onGoToManagement={handleGoToManagement}
       />
-
-      {/* Offline Status Connectivity Banner */}
-      <OfflineIndicator />
 
       {/* Global Footer */}
       <Footer setActiveTab={changeTab} onOpenBookingModal={() => handleOpenBookingModal()} />
