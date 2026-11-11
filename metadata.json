@@ -2,5 +2,7 @@
   "name": "Pahadon Ka Ghar - Mountain Retreat Kashmir",
   "description": "Scenic mountain hotel, resort and homestay in Hariganiwan, Kangan, Ganderbal, Old Sonamarg Road, Jammu & Kashmir with online booking management.",
   "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
 }

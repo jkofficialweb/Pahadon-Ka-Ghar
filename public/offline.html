@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pahadon Ka Ghar — Mountain Retreat Kashmir (Offline Static Edition)</title>
+  <meta name="description" content="Scenic mountain hotel, resort and homestay in Hariganiwan, Kangan, Ganderbal, Old Sonamarg Road, Jammu & Kashmir. Standalone offline accessible edition.">
+  <link rel="icon" type="image/svg+xml" href="./icon.svg">
+  <style>
+    :root {
+      --amber-50: #fffbeb;
+      --amber-100: #fef3c7;
+      --amber-200: #fde68a;
+      --amber-600: #d97706;
+      --amber-700: #b45309;
+      --amber-800: #92400e;
+      --amber-900: #78350f;
+      --stone-50: #fafaf9;
+      --stone-100: #f5f5f4;
+      --stone-200: #e7e5e4;
+      --stone-300: #d6d3d1;
+      --stone-600: #57534e;
+      --stone-700: #44403c;
+      --stone-800: #292524;
+      --stone-900: #1c1917;
+      --emerald-600: #059669;
+      --emerald-700: #047857;
+      --cyan-600: #0891b2;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: var(--stone-50);
+      color: var(--stone-900);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    button { cursor: pointer; border: none; font: inherit; background: none; }
+
+    /* Top Strip */
+    .top-strip {
+      background: #0f172a;
+      color: #cbd5e1;
+      font-size: 12px;
+      padding: 6px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .top-strip a { color: #fde68a; font-weight: 500; }
+    .badge-offline {
+      background: #1e293b;
+      border: 1px solid #334155;
+      color: #38bdf8;
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-size: 11px;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    /* Header Nav */
+    header {
+      position: sticky;
+      top: 0;
+      background: rgba(255, 255, 255, 0.98);
+      border-bottom: 1px solid var(--stone-200);
+      z-index: 50;
+      backdrop-filter: blur(8px);
+    }
+    .nav-container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .brand-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: #fef3c7;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      border: 1px solid #fde68a;
+    }
+    .brand-icon img { width: 100%; height: 100%; object-fit: cover; }
+    .brand-title {
+      font-size: 19px;
+      font-weight: 700;
+      color: var(--stone-900);
+      letter-spacing: -0.5px;
+      line-height: 1.1;
+    }
+    .brand-sub {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--amber-800);
+      font-weight: 600;
+    }
+    nav.desktop-links {
+      display: flex;
+      gap: 20px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--stone-600);
+    }
+    nav.desktop-links a:hover, nav.desktop-links a.active {
+      color: var(--amber-800);
+    }
+    .btn-primary {
+      background: var(--amber-800);
+      color: #ffffff;
+      padding: 8px 18px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      transition: background 0.15s;
+      white-space: nowrap;
+    }
+    .btn-primary:hover { background: var(--amber-900); }
+    .btn-secondary {
+      background: var(--stone-100);
+      color: var(--stone-800);
+      border: 1px solid var(--stone-300);
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 500;
+    }
+    .btn-secondary:hover { background: var(--stone-200); }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      background: #0f172a;
+      color: #ffffff;
+      padding: 64px 20px;
+      overflow: hidden;
+    }
+    .hero-content {
+      max-width: 1240px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+    .hero-tagline {
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #fde68a;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    .hero-title {
+      font-size: 38px;
+      font-weight: 800;
+      line-height: 1.15;
+      max-width: 760px;
+      margin-bottom: 16px;
+      letter-spacing: -1px;
+    }
+    .hero-desc {
+      font-size: 16px;
+      color: #cbd5e1;
+      max-width: 680px;
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 13px;
+      color: #e2e8f0;
+      margin-bottom: 32px;
+    }
+    .hero-badges span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* Search Card */
+    .search-card {
+      background: #ffffff;
+      color: var(--stone-900);
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 10px 25px -5px rgba(0,0,0,0.3);
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
+      align-items: end;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+    .field-group label {
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--stone-600);
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .field-group input, .field-group select {
+      width: 100%;
+      padding: 9px 12px;
+      border: 1px solid var(--stone-300);
+      border-radius: 8px;
+      font-size: 14px;
+      color: var(--stone-900);
+      background: #ffffff;
+    }
+
+    /* Content Layout */
+    .section-wrap {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 60px 20px;
+    }
+    .section-header {
+      margin-bottom: 36px;
+    }
+    .section-subtitle {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-weight: 700;
+      color: var(--amber-800);
+      margin-bottom: 6px;
+    }
+    .section-title {
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--stone-900);
+      letter-spacing: -0.5px;
+    }
+    .section-desc {
+      font-size: 15px;
+      color: var(--stone-600);
+      max-width: 700px;
+      margin-top: 8px;
+    }
+
+    /* Accommodations Grid */
+    .rooms-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+    .room-card {
+      background: #ffffff;
+      border: 1px solid var(--stone-200);
+      border-radius: 16px;
+      overflow: hidden;
+      display: flex;
+      flex-col: column;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .room-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px -10px rgba(0,0,0,0.1);
+    }
+    .room-img-wrap {
+      height: 200px;
+      position: relative;
+      background: #e2e8f0;
+      overflow: hidden;
+    }
+    .room-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .room-badge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: rgba(15, 23, 42, 0.85);
+      color: #ffffff;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 3px 8px;
+      border-radius: 6px;
+      backdrop-filter: blur(4px);
+    }
+    .room-body {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      justify-content: space-between;
+    }
+    .room-title {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .room-sub {
+      font-size: 13px;
+      color: var(--stone-600);
+      margin-bottom: 14px;
+    }
+    .room-specs {
+      display: flex;
+      gap: 12px;
+      font-size: 12px;
+      color: var(--stone-600);
+      border-top: 1px solid var(--stone-100);
+      border-bottom: 1px solid var(--stone-100);
+      padding: 10px 0;
+      margin-bottom: 16px;
+    }
+    .room-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .room-price {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--amber-900);
+    }
+    .room-price span {
+      font-size: 12px;
+      color: var(--stone-600);
+      font-weight: normal;
+    }
+
+    /* Dining Grid */
+    .dining-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+    .dining-card {
+      background: #ffffff;
+      border: 1px solid var(--stone-200);
+      border-radius: 12px;
+      overflow: hidden;
+      padding: 16px;
+      display: flex;
+      gap: 14px;
+    }
+    .dish-img {
+      width: 80px;
+      height: 80px;
+      border-radius: 8px;
+      background: #cbd5e1;
+      object-fit: cover;
+      shrink: 0;
+    }
+    .dish-info h4 { font-size: 15px; font-weight: 700; }
+    .dish-info p { font-size: 12px; color: var(--stone-600); margin: 4px 0; }
+    .dish-tag {
+      font-size: 10px;
+      text-transform: uppercase;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 4px;
+      display: inline-block;
+    }
+    .tag-veg { background: #dcfce7; color: #166534; }
+    .tag-nonveg { background: #fee2e2; color: #991b1b; }
+
+    /* Booking Management Table */
+    .desk-card {
+      background: #ffffff;
+      border: 1px solid var(--stone-200);
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    }
+    .table-responsive {
+      overflow-x: auto;
+      margin-top: 16px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+      text-align: left;
+    }
+    th {
+      background: var(--stone-100);
+      padding: 10px 14px;
+      font-weight: 600;
+      color: var(--stone-700);
+      border-bottom: 2px solid var(--stone-200);
+    }
+    td {
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--stone-200);
+    }
+    .status-badge {
+      display: inline-block;
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 600;
+    }
+    .status-confirmed { background: #dcfce7; color: #15803d; }
+    .status-checked_in { background: #e0f2fe; color: #0369a1; }
+    .status-checked_out { background: #f1f5f9; color: #475569; }
+
+    /* Modal */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.75);
+      backdrop-filter: blur(4px);
+      z-index: 100;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-box {
+      background: #ffffff;
+      border-radius: 20px;
+      max-width: 520px;
+      width: 100%;
+      padding: 24px;
+      position: relative;
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+    .modal-close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      font-size: 20px;
+      color: var(--stone-600);
+    }
+
+    /* Footer */
+    footer {
+      background: #0f172a;
+      color: #94a3b8;
+      padding: 60px 20px 30px;
+      font-size: 13px;
+    }
+    .footer-grid {
+      max-width: 1240px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 36px;
+      margin-bottom: 40px;
+    }
+    .footer-col h4 {
+      color: #ffffff;
+      font-size: 15px;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+    .footer-bottom {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding-top: 24px;
+      border-top: 1px solid #1e293b;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Strip -->
+  <div class="top-strip">
+    <div>
+      <span>Hariganiwan, Old Sonamarg Road, Kashmir</span>
+      <span style="margin: 0 8px; opacity: 0.5;">·</span>
+      <span style="color: #fde68a;">Altitude: 2,100 m</span>
+      <span style="margin: 0 8px; opacity: 0.5;">·</span>
+      <span>Direct Reservations: <a href="tel:+919469919558">+91 94699 19558</a></span>
+    </div>
+    <div style="display:flex; align-items:center; gap: 10px;">
+      <div class="badge-offline">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        <span>100% Static & Offline Ready</span>
+      </div>
+      <a href="javascript:window.print()" style="color:#94a3b8; font-size:11px;">Print Sheet</a>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="nav-container">
+      <div class="brand">
+        <div class="brand-icon">
+          <img src="./icon.svg" alt="Pahadon Ka Ghar Logo">
+        </div>
+        <div>
+          <div class="brand-title">Pahadon Ka Ghar</div>
+          <div class="brand-sub">Mountain Retreat · Kashmir</div>
+        </div>
+      </div>
+
+      <nav class="desktop-links">
+        <a href="#stays">Rooms & Stays</a>
+        <a href="#dining">Wazwan Dining</a>
+        <a href="#experiences">Local Treks</a>
+        <a href="#attractions">Nearby Sights</a>
+        <a href="#management">Booking Desk</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+
+      <div>
+        <button class="btn-primary" onclick="openBookingModal('deluxe-mountain-view')">
+          Book Direct
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Banner -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-tagline">Hariganiwan, Kangan · Sindh Valley · Jammu & Kashmir</div>
+      <h1 class="hero-title">Your Peaceful Mountain Retreat in Kashmir</h1>
+      <p class="hero-desc">
+        Nestled between pine-covered Himalayan ridges and the crystal glacial waters of the Sindh River. Wake up to fresh alpine air, birdsong, authentic Kashmiri Wazwan, and heartfelt hospitality away from tourist crowds.
+      </p>
+
+      <div class="hero-badges">
+        <span>📍 32 km from Sonamarg Golden Meadows</span>
+        <span>🌊 350m walk to Sindh River banks</span>
+        <span>🍲 Authentic Kashmiri Wazwan on site</span>
+        <span>⚡ Electric Heated Blankets & 24/7 Geysers</span>
+      </div>
+
+      <!-- Live Stay Cost Calculator -->
+      <div class="search-card">
+        <div class="field-group">
+          <label>Stay Type</label>
+          <select id="quickRoomSelect" onchange="calculateQuickQuote()">
+            <option value="3800">Deluxe Mountain View (₹3,800/nt)</option>
+            <option value="5200" selected>Sindh Valley Balcony Suite (₹5,200/nt)</option>
+            <option value="7500">Luxury Family 2-Bedroom (₹7,500/nt)</option>
+            <option value="2900">Alpine Glamping Tent (₹2,900/nt)</option>
+          </select>
+        </div>
+        <div class="field-group">
+          <label>Nights</label>
+          <input type="number" id="quickNights" value="2" min="1" max="30" onchange="calculateQuickQuote()">
+        </div>
+        <div class="field-group">
+          <label>Guests</label>
+          <select id="quickGuests">
+            <option value="1">1 Guest</option>
+            <option value="2" selected>2 Guests</option>
+            <option value="3">3 Guests</option>
+            <option value="4">4 Guests</option>
+          </select>
+        </div>
+        <div class="field-group">
+          <label>Estimated Total</label>
+          <div id="quickQuoteDisplay" style="font-size: 20px; font-weight: 800; color: var(--amber-900); padding: 8px 0;">
+            ₹11,648 <span style="font-size: 11px; font-weight: normal; color: var(--stone-600);">(incl. tax)</span>
+          </div>
+        </div>
+        <div>
+          <button class="btn-primary" style="width: 100%; padding: 11px;" onclick="openBookingModal()">
+            Reserve This Stay
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Accommodations Section -->
+  <section class="section-wrap" id="stays">
+    <div class="section-header">
+      <div class="section-subtitle">Comfortable Alpine Lodging</div>
+      <h2 class="section-title">Handcrafted Mountain Stays</h2>
+      <p class="section-desc">
+        Every room is detailed with fragrant cedar wood, electric bed heaters, private balconies with snow peak views, and modern clean bathrooms.
+      </p>
+    </div>
+
+    <div class="rooms-grid">
+      <!-- Room 1 -->
+      <div class="room-card">
+        <div class="room-img-wrap">
+          <img src="./assets/images/room_kashmiri_wood_suite_1794390221069.jpg" alt="Deluxe Room" onerror="this.src='./icon.svg'">
+          <span class="room-badge">Mountain Peak View</span>
+        </div>
+        <div class="room-body">
+          <div>
+            <h3 class="room-title">Deluxe Mountain View Room</h3>
+            <p class="room-sub">Warm cedar wood interiors with panoramic Himalayan peak vistas.</p>
+            <div class="room-specs">
+              <span>👤 2 Guests</span>
+              <span>🛏️ 1 King Bed</span>
+              <span>📐 280 sq ft</span>
+            </div>
+          </div>
+          <div class="room-footer">
+            <div class="room-price">₹3,800 <span>/ night</span></div>
+            <button class="btn-primary" onclick="openBookingModal('deluxe-mountain-view')">Book Now</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Room 2 -->
+      <div class="room-card">
+        <div class="room-img-wrap">
+          <img src="./assets/hotel/real_exterior_lawns.jpg" alt="Balcony Suite" onerror="this.src='./icon.svg'">
+          <span class="room-badge">Sindh Valley Balcony</span>
+        </div>
+        <div class="room-body">
+          <div>
+            <h3 class="room-title">Sindh Valley Balcony Suite</h3>
+            <p class="room-sub">Private sit-out balcony overlooking river meadows and snowline ridges.</p>
+            <div class="room-specs">
+              <span>👤 3 Guests</span>
+              <span>🛏️ 1 King + 1 Daybed</span>
+              <span>📐 360 sq ft</span>
+            </div>
+          </div>
+          <div class="room-footer">
+            <div class="room-price">₹5,200 <span>/ night</span></div>
+            <button class="btn-primary" onclick="openBookingModal('sindh-valley-balcony-suite')">Book Now</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Room 3 -->
+      <div class="room-card">
+        <div class="room-img-wrap">
+          <img src="./assets/hotel/real_family_dining.jpg" alt="Family Suite" onerror="this.src='./icon.svg'">
+          <span class="room-badge">Family Suite</span>
+        </div>
+        <div class="room-body">
+          <div>
+            <h3 class="room-title">Luxury Family 2-Bedroom Suite</h3>
+            <p class="room-sub">Interconnecting master suites tailored for families visiting Sonamarg.</p>
+            <div class="room-specs">
+              <span>👤 4 Guests</span>
+              <span>🛏️ 2 King Beds</span>
+              <span>📐 520 sq ft</span>
+            </div>
+          </div>
+          <div class="room-footer">
+            <div class="room-price">₹7,500 <span>/ night</span></div>
+            <button class="btn-primary" onclick="openBookingModal('family-pine-suite')">Book Now</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Room 4 -->
+      <div class="room-card">
+        <div class="room-img-wrap">
+          <img src="./assets/hotel/real_rooms_grid.jpg" alt="Glamping Stay" onerror="this.src='./icon.svg'">
+          <span class="room-badge">Garden Glamping</span>
+        </div>
+        <div class="room-body">
+          <div>
+            <h3 class="room-title">Alpine Garden Glamping Stay</h3>
+            <p class="room-sub">Starlit nature camping stay on lush resort lawns with cozy thermal bedding.</p>
+            <div class="room-specs">
+              <span>👤 2 Guests</span>
+              <span>🛏️ Double Bed</span>
+              <span>📐 210 sq ft</span>
+            </div>
+          </div>
+          <div class="room-footer">
+            <div class="room-price">₹2,900 <span>/ night</span></div>
+            <button class="btn-primary" onclick="openBookingModal('riverside-glamping-tent')">Book Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Wazwan Dining Section -->
+  <section class="section-wrap" id="dining" style="background: #ffffff; border-top: 1px solid var(--stone-200); border-bottom: 1px solid var(--stone-200);">
+    <div class="section-header">
+      <div class="section-subtitle">Kashmiri Gastronomy & Hospitality</div>
+      <h2 class="section-title">Authentic Wazwan & Tea Garden</h2>
+      <p class="section-desc">
+        Prepared fresh in our kitchen with pure saffron from Pampore, aromatic mountain spices, and traditional recipes.
+      </p>
+    </div>
+
+    <div class="dining-grid">
+      <div class="dining-card">
+        <img src="./assets/images/kashmiri_kahwa_tea_table_1794390222933.jpg" class="dish-img" alt="Kahwa" onerror="this.src='./icon.svg'">
+        <div class="dish-info">
+          <span class="dish-tag tag-veg">Signature Beverage</span>
+          <h4>Kashmiri Shahi Kahwa</h4>
+          <p>Aromatic saffron green tea with crushed almonds, cinnamon & green cardamom.</p>
+        </div>
+      </div>
+
+      <div class="dining-card">
+        <img src="./assets/hotel/real_noon_chai_bread.jpg" class="dish-img" alt="Noon Chai" onerror="this.src='./icon.svg'">
+        <div class="dish-info">
+          <span class="dish-tag tag-veg">Breakfast Bread</span>
+          <h4>Noon Chai & Kashmiri Girda</h4>
+          <p>Pink salted tea brewed with milk and served with tandoor-hot crispy Girda bread.</p>
+        </div>
+      </div>
+
+      <div class="dining-card">
+        <img src="./assets/hotel/real_wazwan_thali.jpg" class="dish-img" alt="Rogan Josh" onerror="this.src='./icon.svg'">
+        <div class="dish-info">
+          <span class="dish-tag tag-nonveg">Royal Wazwan</span>
+          <h4>Kashmiri Rogan Josh</h4>
+          <p>Tender mutton slow-cooked with Kashmiri red chilli, fennel, and shallots.</p>
+        </div>
+      </div>
+
+      <div class="dining-card">
+        <img src="./assets/hotel/real_feast_wazwan.jpg" class="dish-img" alt="Gushtaba" onerror="this.src='./icon.svg'">
+        <div class="dish-info">
+          <span class="dish-tag tag-nonveg">Royal Wazwan</span>
+          <h4>Shahi Gushtaba</h4>
+          <p>Silky hand-pounded mutton meatballs in a rich aromatic yogurt gravy.</p>
+        </div>
+      </div>
+
+      <div class="dining-card">
+        <img src="./assets/hotel/wazwan_dish.jpg" class="dish-img" alt="Rista" onerror="this.src='./icon.svg'">
+        <div class="dish-info">
+          <span class="dish-tag tag-nonveg">Royal Wazwan</span>
+          <h4>Royal Rista</h4>
+          <p>Hand-beaten meat spheres in a vibrant crimson saffron broth.</p>
+        </div>
+      </div>
+
+      <div class="dining-card">
+        <img src="./assets/hotel/real_wazwan_thali.jpg" class="dish-img" alt="Dum Aloo" onerror="this.src='./icon.svg'">
+        <div class="dish-info">
+          <span class="dish-tag tag-veg">Vegetarian Classic</span>
+          <h4>Kashmiri Dum Aloo</h4>
+          <p>Baby potatoes slow-steamed in a tangy yogurt and fennel seed sauce.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Curated Local Experiences & Treks -->
+  <section class="section-wrap" id="experiences">
+    <div class="section-header">
+      <div class="section-subtitle">Hariganiwan, Kangan & Sindh Valley</div>
+      <h2 class="section-title">Curated Mountain Experiences</h2>
+      <p class="section-desc">
+        Explore local treks, ancient 8th-century temple ruins, walnut orchards, and Himalayan bird-watching sanctuaries with host guidance.
+      </p>
+    </div>
+
+    <div class="rooms-grid">
+      <div class="room-card">
+        <div class="room-img-wrap">
+          <img src="./assets/images/hariganiwan_morning_river_1794396327876.jpg" alt="Sindh River Trail" onerror="this.src='./icon.svg'">
+          <span class="room-badge">Gentle / 1.5 Hours</span>
+        </div>
+        <div class="room-body">
+          <h3 class="room-title">Sindh Riverbed & Pine Trail</h3>
+          <p class="room-sub">Direct access from hotel down to crystal turquoise rapids and boulder beaches.</p>
+          <div class="room-specs">
+            <span>🚶 350m Walk</span>
+            <span>🌲 Deodar Woods</span>
+            <span>☕ Free Thermos</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="room-card">
+        <div class="room-img-wrap">
+          <img src="./assets/images/sonamarg_thajiwas_glacier_1794390222847.jpg" alt="Thajiwas Glacier Trek" onerror="this.src='./icon.svg'">
+          <span class="room-badge">Moderate / 3.5 Hours</span>
+        </div>
+        <div class="room-body">
+          <h3 class="room-title">Thajiwas Glacier & Moraine Trek</h3>
+          <p class="room-sub">Hike through summer snowfields, cascading waterfalls, and silver birch forests.</p>
+          <div class="room-specs">
+            <span>🚗 32 km Excursion</span>
+            <span>❄️ Perennial Snow</span>
+            <span>🐴 Pony Assistance</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="room-card">
+        <div class="room-img-wrap">
+          <img src="./assets/hotel/real_trek_guide.jpg" alt="Naranag Temple Ruins" onerror="this.src='./icon.svg'">
+          <span class="room-badge">Historical Trek</span>
+        </div>
+        <div class="room-body">
+          <h3 class="room-title">Naranag 8th-Century Ruins Trail</h3>
+          <p class="room-sub">Ancient monolithic Shiva temples built under King Lalitaditya in Wangath Valley.</p>
+          <div class="room-specs">
+            <span>🚗 14 km Drive</span>
+            <span>🏛️ 1200-Year Heritage</span>
+            <span>💧 Sacred Springs</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Offline Booking Management Desk -->
+  <section class="section-wrap" id="management" style="background: #ffffff; border-top: 1px solid var(--stone-200); border-bottom: 1px solid var(--stone-200);">
+    <div class="section-header" style="display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:16px;">
+      <div>
+        <div class="section-subtitle">Browser-Stored Offline Data</div>
+        <h2 class="section-title">Front Desk Reservation Register</h2>
+        <p class="section-desc">
+          Reservations are saved directly to your device storage (localStorage). You can create, manage, and check in guests completely offline.
+        </p>
+      </div>
+      <div>
+        <button class="btn-primary" onclick="openBookingModal()">+ New Offline Reservation</button>
+      </div>
+    </div>
+
+    <div class="desk-card">
+      <div class="table-responsive">
+        <table>
+          <thead>
+            <tr>
+              <th>Reference</th>
+              <th>Guest Name</th>
+              <th>Room Stay</th>
+              <th>Dates</th>
+              <th>Status</th>
+              <th>Room #</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="bookingsTableBody">
+            <!-- Dynamically populated from localStorage -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQs -->
+  <section class="section-wrap" id="faq">
+    <div class="section-header">
+      <div class="section-subtitle">Travel Advice & Guidelines</div>
+      <h2 class="section-title">Frequently Asked Questions</h2>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 14px; max-width: 800px;">
+      <details style="background: #ffffff; border: 1px solid var(--stone-200); border-radius: 12px; padding: 16px;">
+        <summary style="font-weight: 700; cursor: pointer; color: var(--stone-900);">Do Indian or foreign tourists require an Inner Line Permit (ILP) to visit Hariganiwan or Sonamarg?</summary>
+        <p style="margin-top: 10px; font-size: 14px; color: var(--stone-600); line-height: 1.6;">
+          No permit or ILP is required for Indian citizens or foreign travelers to stay at Hotel Pahadon Ka Ghar or explore the Sindh Valley, Kangan, and Sonamarg. You only need a valid government-issued photo ID for standard hotel check-in.
+        </p>
+      </details>
+
+      <details style="background: #ffffff; border: 1px solid var(--stone-200); border-radius: 12px; padding: 16px;">
+        <summary style="font-weight: 700; cursor: pointer; color: var(--stone-900);">What heating amenities are provided in the rooms during cold nights?</summary>
+        <p style="margin-top: 10px; font-size: 14px; color: var(--stone-600); line-height: 1.6;">
+          All suites are fitted with electric heated bed blankets, insulated double-glazed windows, thick thermal quilts, and 24/7 instant hot water geysers. Additional radiant electric heaters are activated during autumn and winter.
+        </p>
+      </details>
+
+      <details style="background: #ffffff; border: 1px solid var(--stone-200); border-radius: 12px; padding: 16px;">
+        <summary style="font-weight: 700; cursor: pointer; color: var(--stone-900);">How can I open and run this application offline after downloading the files?</summary>
+        <p style="margin-top: 10px; font-size: 14px; color: var(--stone-600); line-height: 1.6;">
+          You can double-click this <code>offline.html</code> file directly in your browser on any computer, phone, or tablet. It runs 100% locally with zero internet, zero server installation, and zero backend required!
+        </p>
+      </details>
+    </div>
+  </section>
+
+  <!-- Booking Modal -->
+  <div class="modal-overlay" id="bookingModal">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeBookingModal()">✕</button>
+      <h3 style="font-size: 20px; font-weight: 800; margin-bottom: 6px;">Reserve Your Mountain Stay</h3>
+      <p style="font-size: 13px; color: var(--stone-600); margin-bottom: 20px;">
+        Pahadon Ka Ghar, Hariganiwan, Old Sonamarg Road, Kashmir
+      </p>
+
+      <form id="offlineBookingForm" onsubmit="handleOfflineBookingSubmit(event)">
+        <div style="display: flex; flex-direction: column; gap: 14px;">
+          <div>
+            <label style="font-size: 12px; font-weight: 600; display: block; margin-bottom: 4px;">Select Room / Suite</label>
+            <select id="modalRoomSelect" style="width: 100%; padding: 10px; border: 1px solid var(--stone-300); border-radius: 8px;">
+              <option value="deluxe-mountain-view">Deluxe Mountain View Room (₹3,800/nt)</option>
+              <option value="sindh-valley-balcony-suite">Sindh Valley Balcony Suite (₹5,200/nt)</option>
+              <option value="family-pine-suite">Luxury Family 2-Bedroom Suite (₹7,500/nt)</option>
+              <option value="riverside-glamping-tent">Alpine Garden Glamping Tent (₹2,900/nt)</option>
+            </select>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+            <div>
+              <label style="font-size: 12px; font-weight: 600; display: block; margin-bottom: 4px;">Check-In Date</label>
+              <input type="date" id="modalCheckIn" required style="width: 100%; padding: 10px; border: 1px solid var(--stone-300); border-radius: 8px;">
+            </div>
+            <div>
+              <label style="font-size: 12px; font-weight: 600; display: block; margin-bottom: 4px;">Check-Out Date</label>
+              <input type="date" id="modalCheckOut" required style="width: 100%; padding: 10px; border: 1px solid var(--stone-300); border-radius: 8px;">
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+            <div>
+              <label style="font-size: 12px; font-weight: 600; display: block; margin-bottom: 4px;">Full Name *</label>
+              <input type="text" id="modalGuestName" placeholder="e.g. Tariq Ahmad" required style="width: 100%; padding: 10px; border: 1px solid var(--stone-300); border-radius: 8px;">
+            </div>
+            <div>
+              <label style="font-size: 12px; font-weight: 600; display: block; margin-bottom: 4px;">Phone Number *</label>
+              <input type="tel" id="modalGuestPhone" placeholder="+91 94699 19558" required style="width: 100%; padding: 10px; border: 1px solid var(--stone-300); border-radius: 8px;">
+            </div>
+          </div>
+
+          <div>
+            <label style="font-size: 12px; font-weight: 600; display: block; margin-bottom: 4px;">Email (Optional)</label>
+            <input type="email" id="modalGuestEmail" placeholder="guest@example.com" style="width: 100%; padding: 10px; border: 1px solid var(--stone-300); border-radius: 8px;">
+          </div>
+
+          <div style="padding-top: 8px;">
+            <button type="submit" class="btn-primary" style="width: 100%; padding: 12px; font-size: 14px;">
+              Confirm & Save Offline Reservation
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>Pahadon Ka Ghar</h4>
+        <p>A scenic hotel, mountain retreat and youth hospitality training center in Hariganiwan, Kangan, Ganderbal on Old Sonamarg Road, Kashmir.</p>
+        <p style="margin-top: 12px; color: #fde68a;">Phone: +91 94699 19558 / +91 95963 21510</p>
+      </div>
+      <div class="footer-col">
+        <h4>Direct Navigation</h4>
+        <p><a href="#stays">Rooms & Rates</a></p>
+        <p><a href="#dining">Kashmiri Wazwan Menu</a></p>
+        <p><a href="#experiences">Local Treks & Village Visits</a></p>
+        <p><a href="#management">Offline Front Desk Desk</a></p>
+      </div>
+      <div class="footer-col">
+        <h4>Offline Access Tips</h4>
+        <p>This single HTML file is 100% self-contained. You can carry it on a USB flash drive or phone and open it anywhere in Kashmir even without mobile tower coverage!</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 Hotel Pahadon Ka Ghar. All rights reserved. Hariganiwan, Kashmir.</div>
+      <div>Custom Domain: <strong>pahadonkaghar.com</strong></div>
+    </div>
+  </footer>
+
+  <!-- Self-Contained Offline JavaScript Logic -->
+  <script>
+    // Initial Seed Bookings
+    const INITIAL_RESERVATIONS = [
+      { id: "b1", ref: "PKG-2601", guest: "Zubair Ahmad", room: "Sindh Valley Balcony Suite", dates: "12 May - 15 May", status: "confirmed", roomNum: "201" },
+      { id: "b2", ref: "PKG-2602", guest: "Pooja Sharma", room: "Deluxe Mountain View Room", dates: "18 May - 20 May", status: "confirmed", roomNum: "104" },
+      { id: "b3", ref: "PKG-2603", guest: "Dr. Farooq Mir", room: "Luxury Family 2-Bedroom Suite", dates: "24 May - 28 May", status: "confirmed", roomNum: "101" }
+    ];
+
+    // Load bookings from localStorage
+    function getBookings() {
+      try {
+        const stored = localStorage.getItem('pkg_offline_reservations');
+        return stored ? JSON.parse(stored) : INITIAL_RESERVATIONS;
+      } catch (e) {
+        return INITIAL_RESERVATIONS;
+      }
+    }
+
+    function saveBookings(list) {
+      try {
+        localStorage.setItem('pkg_offline_reservations', JSON.stringify(list));
+      } catch (e) {}
+      renderBookings();
+    }
+
+    function renderBookings() {
+      const tbody = document.getElementById('bookingsTableBody');
+      if (!tbody) return;
+      const bookings = getBookings();
+      tbody.innerHTML = '';
+
+      bookings.forEach(b => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td><strong>${b.ref}</strong></td>
+          <td>${b.guest}</td>
+          <td>${b.room}</td>
+          <td>${b.dates}</td>
+          <td><span class="status-badge status-${b.status}">${b.status.replace('_', ' ').toUpperCase()}</span></td>
+          <td>${b.roomNum || 'Unassigned'}</td>
+          <td>
+            <button class="btn-secondary" style="padding: 4px 8px; font-size: 11px;" onclick="cycleStatus('${b.id}')">
+              Update Status
+            </button>
+          </td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    function cycleStatus(id) {
+      const bookings = getBookings();
+      const target = bookings.find(b => b.id === id);
+      if (!target) return;
+      if (target.status === 'confirmed') target.status = 'checked_in';
+      else if (target.status === 'checked_in') target.status = 'checked_out';
+      else target.status = 'confirmed';
+      saveBookings(bookings);
+    }
+
+    // Modal Handlers
+    function openBookingModal(roomId) {
+      if (roomId) {
+        const select = document.getElementById('modalRoomSelect');
+        if (select) select.value = roomId;
+      }
+      // Set default dates
+      const today = new Date();
+      const checkin = today.toISOString().split('T')[0];
+      today.setDate(today.getDate() + 2);
+      const checkout = today.toISOString().split('T')[0];
+      document.getElementById('modalCheckIn').value = checkin;
+      document.getElementById('modalCheckOut').value = checkout;
+
+      document.getElementById('bookingModal').classList.add('active');
+    }
+
+    function closeBookingModal() {
+      document.getElementById('bookingModal').classList.remove('active');
+    }
+
+    function handleOfflineBookingSubmit(e) {
+      e.preventDefault();
+      const roomSelect = document.getElementById('modalRoomSelect');
+      const roomName = roomSelect.options[roomSelect.selectedIndex].text.split('(')[0].trim();
+      const guestName = document.getElementById('modalGuestName').value.trim();
+      const checkIn = document.getElementById('modalCheckIn').value;
+      const checkOut = document.getElementById('modalCheckOut').value;
+      const ref = 'PKG-' + Math.floor(1000 + Math.random() * 9000);
+
+      const newBooking = {
+        id: 'b_' + Date.now(),
+        ref: ref,
+        guest: guestName,
+        room: roomName,
+        dates: checkIn + ' to ' + checkOut,
+        status: 'confirmed',
+        roomNum: 'Assigned at Gate'
+      };
+
+      const bookings = [newBooking, ...getBookings()];
+      saveBookings(bookings);
+      closeBookingModal();
+      alert('Reservation ' + ref + ' confirmed and saved to your device storage! See Front Desk Table below.');
+      location.hash = '#management';
+    }
+
+    function calculateQuickQuote() {
+      const price = parseInt(document.getElementById('quickRoomSelect').value, 10);
+      const nights = parseInt(document.getElementById('quickNights').value, 10) || 1;
+      const subtotal = price * nights;
+      const tax = Math.round(subtotal * 0.12);
+      const total = subtotal + tax;
+      document.getElementById('quickQuoteDisplay').innerHTML =
+        '₹' + total.toLocaleString('en-IN') + ' <span style="font-size: 11px; font-weight: normal; color: var(--stone-600);">(incl. 12% tax)</span>';
+    }
+
+    // Initialize on page load
+    window.addEventListener('DOMContentLoaded', () => {
+      renderBookings();
+      calculateQuickQuote();
+    });
+  </script>
+</body>
+</html>
