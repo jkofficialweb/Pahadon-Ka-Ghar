@@ -1,92 +1,78 @@
 # Pahadon Ka Ghar — Mountain Retreat Kashmir
 
 > **"Your Home in the Mountains, Where Every Guest Is Special"**  
-> Located at Hariganiwan, Kangan, Ganderbal, Old Sonamarg Road, Jammu & Kashmir (Altitude 2,100 m, 32 km from Sonamarg, 350m walk to Sindh River).
-
-
----
-
-## ⚡ 100% Offline Access & Download Guide
-
-You can run and explore **Pahadon Ka Ghar** completely **offline** without an internet connection or backend server:
-
-### Method 1: Standalone Single-File Offline Edition (Zero Installation)
-- Simply double-click **`offline.html`** (or `public/offline.html` / `dist/offline.html`) in your file explorer.
-- It opens instantly in **Google Chrome**, **Safari**, **Microsoft Edge**, **Mozilla Firefox**, or any mobile browser directly via `file:///` protocol.
-- Includes pure self-contained HTML5, responsive CSS, and interactive vanilla JavaScript:
-  - Room cards with live night & guest pricing calculator
-  - Authentic Kashmiri Wazwan menu with price estimates
-  - Mountain trekking routes and distance guides
-  - Instant booking reservation manager saved to browser `localStorage`
-  - Contact and WhatsApp direct dial links
-
-### Method 2: 1-Click Offline Desktop Launchers
-- **Windows**: Double-click `start.bat`. It automatically detects Python/Node to launch a local server or opens `offline.html` directly in your default browser.
-- **macOS / Linux**: Open Terminal and run `./start.sh` (or `bash start.sh`).
-
-### Method 3: Progressive Web App (PWA) Offline Installation
-1. Visit the website online in Chrome, Edge, or Safari on desktop or mobile.
-2. Click the **"Install App"** button in the header navigation or the browser address bar icon (`+` or download arrow).
-3. The app is installed directly to your home screen or desktop application drawer.
-4. The built-in **Workbox Service Worker** caches all static assets, images, icons, and pages for full offline browsing even in airplane mode.
-5. An in-app status badge automatically alerts you when you are browsing offline.
+> Located at Hariganiwan, Kangan, Ganderbal, Old Sonamarg Road, Jammu & Kashmir (Altitude 2,100 m, 32 km from Sonamarg, 350m walk to Sindh River).  
+> Custom Domain: **`pahadonkaghar.com`**
 
 ---
 
-## 🛠️ GitHub & GitHub Pages Compatibility Fixes
+## 🛠️ Why GitHub Pages Showed a Blank White Page & How It's Fixed
 
-If you encountered a **blank page** after uploading or deploying this project to GitHub or GitHub Pages, this repository has been configured with the following production fixes:
+If you encountered a **blank white page** after uploading or deploying this project to GitHub Pages, the root causes were:
 
-1. **Relative Base Path (`base: './'`) in `vite.config.ts`**:
-   - Standard Vite projects default to `base: '/'`. When deployed on GitHub Pages (`https://<username>.github.io/<repo-name>/`), absolute links like `/assets/index-xxx.js` 404 because the browser requests them from the domain root instead of your repository folder.
-   - Setting `base: './'` ensures all bundled JS, CSS, and asset links are relative and load reliably regardless of your repository name or custom domain.
+1. **Unresolved Imports from Deleted Files**:
+   - `OfflineIndicator.tsx` and `PWAInstallButton.tsx` were imported in `App.tsx` and `Navbar.tsx` after the files were deleted. This caused the TypeScript compiler and Vite to throw module errors during build and browser runtime, preventing React from mounting.
+   - All dangling imports and plugins have been removed cleanly.
 
-2. **Jekyll Processing Bypassed (`.nojekyll`)**:
-   - Added `.nojekyll` to the root and `/public` directories. GitHub Pages defaults to Jekyll, which drops files and folders starting with underscores or special characters. `.nojekyll` tells GitHub Pages to serve all static Vite assets directly.
+2. **`vite-plugin-pwa` Build Failure**:
+   - The PWA plugin was attempting to bundle missing icons and threw missing module errors. `vite.config.ts` has been restored to a clean, fast configuration with `base: './'`.
 
-3. **Single Page Application 404 Fallback (`public/404.html`)**:
-   - Added a SPA redirect script in `public/404.html`. If a visitor refreshes on a subpath or deep link, GitHub Pages redirects back to `index.html` while preserving URL hash and queries, eliminating blank 404 pages.
+3. **Relative Base Path (`base: './'`)**:
+   - Standard Vite projects default to `base: '/'`. When deployed on GitHub Pages (`https://<username>.github.io/<repo-name>/`), absolute links like `/assets/index-xxx.js` 404 because the browser requests them from the domain root instead of the repository directory.
+   - Setting `base: './'` ensures all bundled JS, CSS, and asset links are relative and work on both custom domains (`pahadonkaghar.com`) and GitHub repository subpaths.
 
-4. **Asset Path Normalization (`src/utils/assets.ts`)**:
-   - All hotel photos, gallery views, trekking trails, and Wazwan menu images are hosted under `public/assets/` and resolved via `getAssetUrl()`. This guarantees images load without 404 errors across both local dev and production GitHub subpaths.
+4. **Missing CNAME in Build Folder**:
+   - The user added `CNAME` for `pahadonkaghar.com` at the root, but Vite only bundles files from `public/`. We copied `CNAME` into `public/CNAME` and `docs/CNAME` so it is included in all builds.
 
-5. **React Error Boundary (`src/components/ErrorBoundary.tsx`)**:
-   - Wrapped the entire application mount with a graceful Error Boundary in `src/main.tsx`. If an unexpected error or storage failure occurs on an older browser, the application displays a mountain retreat recovery screen with a "Reload" and "Reset" button instead of a blank white screen.
+5. **Jekyll Processing Bypassed (`.nojekyll`)**:
+   - Added `.nojekyll` to the root, `/public`, and `/docs` directories so GitHub Pages serves raw Vite build assets directly without running Jekyll.
 
-6. **Automatic GitHub Pages Deployment Workflow (`.github/workflows/deploy.yml`)**:
-   - A ready-to-run GitHub Actions workflow that automatically runs unit tests, compiles the production bundle (`npm run build`), and deploys directly to GitHub Pages on every push to `main` or `master`.
+6. **Single Page Application 404 Fallback (`404.html`)**:
+   - Added a SPA redirect script in `public/404.html` and `docs/404.html`. If a visitor refreshes on a subpath or deep link, GitHub Pages redirects back to `index.html` while preserving URL hash and queries.
 
----
-
-## 🚀 How to Deploy on GitHub Pages
-
-### Option A: Via GitHub Actions (Recommended)
-1. Push this repository to your GitHub account (`main` or `master` branch).
-2. On GitHub, go to your repository **Settings** → **Pages**.
-3. Under **Build and deployment** → **Source**, select **GitHub Actions**.
-4. The workflow in `.github/workflows/deploy.yml` will automatically build and publish your site!
-
-### Option B: Via Deploy from Branch
-1. Run `npm run build` locally.
-2. Publish the `dist` folder to a `gh-pages` branch.
-3. In repository **Settings** → **Pages**, select **Deploy from a branch** and choose `gh-pages` / `/(root)`.
+7. **Pre-Built `/docs` Directory for 1-Click Branch Deployment**:
+   - GitHub Pages only allows selecting `/(root)` or `/docs` when deploying from a branch. We configured the build to automatically output the production bundle into `/docs/`.
 
 ---
 
-## 💻 Local Development
+## 🚀 How to Deploy on GitHub Pages (Choose Option 1 or 2)
+
+### Option 1: Deploy from Branch via `/docs` (Easiest — 1 Minute)
+This is the most reliable and immediate method:
+1. Push all files to your GitHub repository (`main` branch).
+2. On GitHub, go to your repository **Settings** → **Pages** (in the left sidebar).
+3. Under **Build and deployment**:
+   - **Source**: Select **Deploy from a branch**
+   - **Branch**: Select **`main`**
+   - **Folder**: Select **`/docs`** (click Save)
+4. Under **Custom domain**:
+   - Enter: `pahadonkaghar.com` (click Save)
+5. Done! Your website is live within 30 seconds at `https://pahadonkaghar.com` with NO blank pages!
+
+### Option 2: Deploy via GitHub Actions (Automated CI/CD)
+1. On GitHub, go to your repository **Settings** → **Pages**.
+2. Under **Build and deployment**:
+   - **Source**: Select **GitHub Actions**
+3. The included `.github/workflows/deploy.yml` workflow will automatically run tests, build the bundle, and publish your site on every push.
+
+---
+
+## 💻 Local Development & Build
 
 ```bash
 # 1. Install dependencies
-npm install
+npm install --legacy-peer-deps
 
-# 2. Run unit test suite (Node built-in runner)
-npm test # or: npx tsx --test src/utils/*.test.ts
+# 2. Run unit test suite
+npm test
 
 # 3. Start local development server
 npm run dev
 
-# 4. Build and preview production bundle
+# 4. Build production bundle (syncs to both dist/ and docs/)
 npm run build
+
+# 5. Preview the production build locally
 npm run preview
 ```
 

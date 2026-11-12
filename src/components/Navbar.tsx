@@ -12,7 +12,6 @@ import {
   Home as HomeIcon,
 } from 'lucide-react';
 import { HOTEL_INFO } from '../data/hotelData.ts';
-import { PWAInstallButton } from './PWAInstallButton.tsx';
 
 interface NavbarProps {
   activeTab: string;
@@ -110,10 +109,8 @@ export const Navbar: React.FC<NavbarProps> = ({
           })}
         </nav>
 
-        {/* Zone 3: 1 primary action + PWA offline install */}
+        {/* Zone 3: 1 primary action */}
         <div className="flex items-center gap-2 sm:gap-3 shrink-0">
-          <PWAInstallButton />
-
           <button
             onClick={() => onOpenBookingModal()}
             className="hidden sm:inline-flex px-4 py-2 text-xs sm:text-sm font-medium text-white bg-amber-800 hover:bg-amber-900 rounded-lg shadow-sm transition-all hover:shadow cursor-pointer whitespace-nowrap shrink-0"
@@ -155,7 +152,6 @@ export const Navbar: React.FC<NavbarProps> = ({
           })}
 
           <div className="pt-4 mt-3 border-t border-stone-100 flex flex-col gap-2">
-            <PWAInstallButton variant="full" className="justify-center py-2" />
             <a
               href={`tel:${HOTEL_INFO.phone1}`}
               className="flex items-center justify-center gap-2 py-2 px-4 rounded-lg bg-stone-100 text-stone-800 text-sm font-medium"
