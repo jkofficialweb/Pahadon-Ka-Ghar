@@ -3,6 +3,34 @@
 > **"Your Home in the Mountains, Where Every Guest Is Special"**  
 > Located at Hariganiwan, Kangan, Ganderbal, Old Sonamarg Road, Jammu & Kashmir (Altitude 2,100 m, 32 km from Sonamarg, 350m walk to Sindh River).
 
+
+---
+
+## ⚡ 100% Offline Access & Download Guide
+
+You can run and explore **Pahadon Ka Ghar** completely **offline** without an internet connection or backend server:
+
+### Method 1: Standalone Single-File Offline Edition (Zero Installation)
+- Simply double-click **`offline.html`** (or `public/offline.html` / `dist/offline.html`) in your file explorer.
+- It opens instantly in **Google Chrome**, **Safari**, **Microsoft Edge**, **Mozilla Firefox**, or any mobile browser directly via `file:///` protocol.
+- Includes pure self-contained HTML5, responsive CSS, and interactive vanilla JavaScript:
+  - Room cards with live night & guest pricing calculator
+  - Authentic Kashmiri Wazwan menu with price estimates
+  - Mountain trekking routes and distance guides
+  - Instant booking reservation manager saved to browser `localStorage`
+  - Contact and WhatsApp direct dial links
+
+### Method 2: 1-Click Offline Desktop Launchers
+- **Windows**: Double-click `start.bat`. It automatically detects Python/Node to launch a local server or opens `offline.html` directly in your default browser.
+- **macOS / Linux**: Open Terminal and run `./start.sh` (or `bash start.sh`).
+
+### Method 3: Progressive Web App (PWA) Offline Installation
+1. Visit the website online in Chrome, Edge, or Safari on desktop or mobile.
+2. Click the **"Install App"** button in the header navigation or the browser address bar icon (`+` or download arrow).
+3. The app is installed directly to your home screen or desktop application drawer.
+4. The built-in **Workbox Service Worker** caches all static assets, images, icons, and pages for full offline browsing even in airplane mode.
+5. An in-app status badge automatically alerts you when you are browsing offline.
+
 ---
 
 ## 🛠️ GitHub & GitHub Pages Compatibility Fixes
