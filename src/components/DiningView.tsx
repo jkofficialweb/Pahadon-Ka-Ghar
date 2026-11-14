@@ -114,7 +114,7 @@ export const DiningView: React.FC = () => {
 
         <div className="relative min-h-[320px] bg-stone-800">
           <img
-            src={getAssetUrl('assets/images/kashmiri_kahwa_tea_table_1794390222933.jpg')}
+            src={getAssetUrl('assets/aistudio/IMG-20261114-WA0056_b1c02bf9.jpg')}
             alt="Traditional Kashmiri Kahwa samovar poured into cups"
             referrerPolicy="no-referrer"
             className="w-full h-full object-cover"
@@ -204,7 +204,7 @@ export const DiningView: React.FC = () => {
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
           <div className="rounded-xl overflow-hidden aspect-4/3 bg-stone-200 shadow-xs">
             <img
-              src={getAssetUrl('assets/hotel/real_wazwan_thali.jpg')}
+              src={getAssetUrl('assets/aistudio/IMG-20261114-WA0063_415d5162.jpg')}
               alt="Traditional Kashmiri Wazwan Thali"
               referrerPolicy="no-referrer"
               className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
@@ -212,7 +212,7 @@ export const DiningView: React.FC = () => {
           </div>
           <div className="rounded-xl overflow-hidden aspect-4/3 bg-stone-200 shadow-xs">
             <img
-              src={getAssetUrl('assets/hotel/real_noon_chai_bread.jpg')}
+              src={getAssetUrl('assets/aistudio/IMG-20261114-WA0048_09ef1763.jpg')}
               alt="Noon Chai with Kashmiri bread"
               referrerPolicy="no-referrer"
               className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
@@ -220,16 +220,16 @@ export const DiningView: React.FC = () => {
           </div>
           <div className="rounded-xl overflow-hidden aspect-4/3 bg-stone-200 shadow-xs">
             <img
-              src={getAssetUrl('assets/hotel/real_lawn_sitting.jpg')}
-              alt="Outdoor lawn dining"
+              src={getAssetUrl('assets/aistudio/IMG-20261114-WA0050_796d4998.jpg')}
+              alt="Outdoor lawn dining at Pahadon Ka Ghar"
               referrerPolicy="no-referrer"
               className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
             />
           </div>
           <div className="rounded-xl overflow-hidden aspect-4/3 bg-stone-200 shadow-xs">
             <img
-              src={getAssetUrl('assets/hotel/real_family_dining.jpg')}
-              alt="Family dining at Pahadon Ka Ghar"
+              src={getAssetUrl('assets/aistudio/IMG-20261114-WA0051_28fbcf12.jpg')}
+              alt="Family dining and traditional feast at Pahadon Ka Ghar"
               referrerPolicy="no-referrer"
               className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
             />

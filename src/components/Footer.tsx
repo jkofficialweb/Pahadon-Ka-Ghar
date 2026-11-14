@@ -50,9 +50,11 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab, onOpenBookingModal
               {[
                 { id: 'home', label: 'Home Overview' },
                 { id: 'rooms', label: 'Rooms, Suites & Tents' },
+                { id: 'services', label: 'Our Services' },
                 { id: 'dining', label: 'Kashmiri Wazwan & Kahwa' },
                 { id: 'experiences', label: 'Local Experiences & Treks' },
                 { id: 'attractions', label: 'Sonamarg & Sindh River' },
+                { id: 'gallery', label: 'Photo Gallery' },
                 { id: 'academy', label: 'Youth Skill Academy' },
                 { id: 'management', label: 'Reservation Front Desk' },
                 { id: 'faq', label: 'Guest FAQs & Permits' },
@@ -106,6 +108,12 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab, onOpenBookingModal
                 <Mail className="w-3.5 h-3.5 text-amber-400 shrink-0" />
                 <a href={`mailto:${HOTEL_INFO.email}`} className="hover:text-white transition-colors truncate">
                   {HOTEL_INFO.email}
+                </a>
+              </div>
+              <div className="flex items-center gap-2">
+                <Mail className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+                <a href={`mailto:${HOTEL_INFO.secondaryEmail}`} className="hover:text-white transition-colors truncate">
+                  {HOTEL_INFO.secondaryEmail}
                 </a>
               </div>
               <div className="pt-1">

@@ -4,19 +4,32 @@ import { HomeOverview } from './components/HomeOverview.tsx';
 import { RoomsView } from './components/RoomsView.tsx';
 import { DiningView } from './components/DiningView.tsx';
 import { AttractionsView } from './components/AttractionsView.tsx';
+import { ServicesView } from './components/ServicesView.tsx';
+import { GalleryView } from './components/GalleryView.tsx';
 import { SkillAcademyView } from './components/SkillAcademyView.tsx';
 import { BookingManagementView } from './components/BookingManagementView.tsx';
 import { BookingModal } from './components/BookingModal.tsx';
 import { Footer } from './components/Footer.tsx';
-import { INITIAL_BOOKINGS, HOTEL_INFO } from './data/hotelData.ts';
+import { INITIAL_BOOKINGS } from './data/hotelData.ts';
 import { Booking, BookingStatus, RoomCategory } from './types/hotel.ts';
-import { MessageCircle, Phone, ArrowUp } from 'lucide-react';
+import { MessageCircle } from 'lucide-react';
+
+const VALID_TABS = [
+  'home',
+  'rooms',
+  'services',
+  'dining',
+  'attractions',
+  'gallery',
+  'academy',
+  'management',
+];
 
 export default function App() {
-  // Navigation tab state (supports URL hash e.g. #rooms, #management)
+  // Navigation tab state (supports URL hash e.g. #rooms, #services, #gallery)
   const getInitialTab = () => {
     const hash = window.location.hash.replace('#', '');
-    if (['home', 'rooms', 'dining', 'attractions', 'academy', 'management'].includes(hash)) {
+    if (VALID_TABS.includes(hash)) {
       return hash;
     }
     return 'home';
@@ -28,7 +41,7 @@ export default function App() {
   useEffect(() => {
     const handleHashChange = () => {
       const hash = window.location.hash.replace('#', '');
-      if (['home', 'rooms', 'dining', 'attractions', 'academy', 'management'].includes(hash)) {
+      if (VALID_TABS.includes(hash)) {
         setActiveTab(hash);
       }
     };
@@ -129,8 +142,10 @@ export default function App() {
           <HomeOverview
             onOpenBookingModal={handleOpenBookingModal}
             onNavigateToRooms={() => changeTab('rooms')}
+            onNavigateToServices={() => changeTab('services')}
             onNavigateToDining={() => changeTab('dining')}
             onNavigateToAttractions={() => changeTab('attractions')}
+            onNavigateToGallery={() => changeTab('gallery')}
             onNavigateToAcademy={() => changeTab('academy')}
             checkIn={checkIn}
             setCheckIn={setCheckIn}
@@ -151,9 +166,20 @@ export default function App() {
           />
         )}
 
+        {activeTab === 'services' && (
+          <ServicesView
+            onOpenBookingModal={handleOpenBookingModal}
+            onNavigateToRooms={() => changeTab('rooms')}
+            onNavigateToAttractions={() => changeTab('attractions')}
+            onNavigateToGallery={() => changeTab('gallery')}
+          />
+        )}
+
         {activeTab === 'dining' && <DiningView />}
 
         {activeTab === 'attractions' && <AttractionsView />}
+
+        {activeTab === 'gallery' && <GalleryView />}
 
         {activeTab === 'academy' && <SkillAcademyView />}
 

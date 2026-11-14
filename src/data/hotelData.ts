@@ -15,7 +15,8 @@ export const HOTEL_INFO = {
   address: 'Hariganiwan, Kangan, Ganderbal, Old Sonamarg Road, Jammu & Kashmir, 191202',
   phone1: '+91 94699 19558',
   phone2: '+91 95963 21510',
-  email: 'khandayjeelani00@gmail.com',
+  email: 'info@pahadonkaghar.com',
+  secondaryEmail: 'pahadonkaghar@gmail.com',
   mapsUrl: 'https://share.google/IPvR3GgrQvLpcwsgq',
   altitude: '2,100 m above sea level',
   sindhRiverDistance: '350 meters',
@@ -86,11 +87,13 @@ export const ROOMS_DATA: RoomType[] = [
       'Work desk & cozy armchair reading nook',
     ],
     amenities: ['Free Wi-Fi', '24/7 Hot Water', 'Heated Bed', 'Room Service', 'Mountain View', 'Electric Kettle'],
-    image: getAssetUrl('assets/images/room_kashmiri_wood_suite_1794390221069.jpg'),
+    image: getAssetUrl('assets/aistudio/IMG-20261114-WA0092_b0bc1e1f.jpg'),
     galleryImages: [
-      getAssetUrl('assets/images/room_kashmiri_wood_suite_1794390221069.jpg'),
-      getAssetUrl('assets/hotel/real_rooms_grid.jpg'),
-      getAssetUrl('assets/hotel/real_exterior_lawns.jpg'),
+      getAssetUrl('assets/aistudio/IMG-20261114-WA0092_b0bc1e1f.jpg'),
+      getAssetUrl('assets/aistudio/IMG-20261114-WA0028_6f98380d.jpg'),
+      getAssetUrl('assets/aistudio/IMG-20261114-WA0038_49d03cc0.jpg'),
+      getAssetUrl('assets/aistudio/IMG-20261114-WA0042_84fdeb3d.jpg'),
+      getAssetUrl('assets/aistudio/IMG-20261114-WA0029_de870698.jpg'),
     ],
     rating: 4.9,
     reviewsCount: 142,
@@ -119,11 +122,13 @@ export const ROOMS_DATA: RoomType[] = [
       'Complimentary mineral water & dry fruit welcome platter',
     ],
     amenities: ['Private Balcony', 'River View', 'Free Wi-Fi', '24/7 Hot Water', 'Heated Bed', 'Tea/Coffee Maker', 'Room Service'],
-    image: getAssetUrl('assets/hotel/real_exterior_lawns.jpg'),
+    image: getAssetUrl('assets/aistudio/IMG-20261114-WA0039_786bbd99.jpg'),
     galleryImages: [
-      getAssetUrl('assets/hotel/real_exterior_lawns.jpg'),
-      getAssetUrl('assets/images/room_kashmiri_wood_suite_1794390221069.jpg'),
-      getAssetUrl('assets/hotel/real_garden_flowers.jpg'),
+      getAssetUrl('assets/aistudio/IMG-20261114-WA0039_786bbd99.jpg'),
+      getAssetUrl('assets/aistudio/IMG-20261114-WA0045_4bf519e2.jpg'),
+      getAssetUrl('assets/aistudio/IMG-20261114-WA0033_ff5948f3.jpg'),
+      getAssetUrl('assets/aistudio/IMG-20261114-WA0034_226afe4c.jpg'),
+      getAssetUrl('assets/aistudio/IMG-20261114-WA0114_0ffb00dd.jpg'),
     ],
     rating: 5.0,
     reviewsCount: 98,
@@ -151,11 +156,13 @@ export const ROOMS_DATA: RoomType[] = [
       'Garden patio direct access',
     ],
     amenities: ['2 Bedrooms', 'Dual Bathrooms', 'Garden Access', 'Free Wi-Fi', '24/7 Hot Water', 'Dining Area', 'Family Friendly'],
-    image: getAssetUrl('assets/hotel/real_family_dining.jpg'),
+    image: getAssetUrl('assets/aistudio/IMG-20261114-WA0044_c9edac03.jpg'),
     galleryImages: [
-      getAssetUrl('assets/hotel/real_family_dining.jpg'),
-      getAssetUrl('assets/hotel/real_rooms_grid.jpg'),
-      getAssetUrl('assets/hotel/real_lawn_sitting.jpg'),
+      getAssetUrl('assets/aistudio/IMG-20261114-WA0044_c9edac03.jpg'),
+      getAssetUrl('assets/aistudio/IMG-20261114-WA0030_46d132c6.jpg'),
+      getAssetUrl('assets/aistudio/IMG-20261114-WA0035_8ccba239.jpg'),
+      getAssetUrl('assets/aistudio/IMG-20261114-WA0032_c6e75909.jpg'),
+      getAssetUrl('assets/aistudio/IMG-20261114-WA0031_3111c663.jpg'),
     ],
     rating: 4.9,
     reviewsCount: 86,
@@ -183,11 +190,12 @@ export const ROOMS_DATA: RoomType[] = [
       'Clean modern attached washroom facility adjacent',
     ],
     amenities: ['Bonfire Access', 'Garden Lawn', 'Free Wi-Fi', 'Hot Water Bath Access', 'Free Breakfast', 'Outdoor Seating'],
-    image: getAssetUrl('assets/hotel/real_rooms_grid.jpg'),
+    image: getAssetUrl('assets/aistudio/IMG-20261114-WA0041_6fa8f2fa.jpg'),
     galleryImages: [
-      getAssetUrl('assets/hotel/real_rooms_grid.jpg'),
-      getAssetUrl('assets/hotel/real_lawn_sitting.jpg'),
-      getAssetUrl('assets/hotel/real_garden_flowers.jpg'),
+      getAssetUrl('assets/aistudio/IMG-20261114-WA0041_6fa8f2fa.jpg'),
+      getAssetUrl('assets/aistudio/IMG-20261114-WA0046_8177dfac.jpg'),
+      getAssetUrl('assets/aistudio/IMG-20261114-WA0095_de840f90.jpg'),
+      getAssetUrl('assets/aistudio/IMG-20261114-WA0115_c0a9df9c.jpg'),
     ],
     rating: 4.8,
     reviewsCount: 64,
@@ -205,7 +213,7 @@ export const ATTRACTIONS_DATA: Attraction[] = [
     highlight: 'World-famous alpine golden meadows & snowcapped peaks',
     description:
       'Sonamarg sits along the banks of Nallah Sindh. A historic gateway on the ancient silk route, famed for rolling meadows blanketed with yellow buttercups in spring and pristine snow trails in winter.',
-    image: getAssetUrl('assets/images/sonamarg_thajiwas_glacier_1794390222847.jpg'),
+    image: getAssetUrl('assets/aistudio/IMG-20261114-WA0111_42f55134.jpg'),
     bestSeason: 'Year Round (April - October for trekking, Nov - Feb for snow)',
   },
   {
@@ -217,7 +225,7 @@ export const ATTRACTIONS_DATA: Attraction[] = [
     highlight: 'Snow sledging, pony trails, and glacial streams',
     description:
       'Located 2 km south of Sonamarg at the foot of the Thajiwas mountain. Famed for perennial snow sheets, horseback riding through pine forests, and picturesque waterfalls cascading down rocky ravines.',
-    image: getAssetUrl('assets/hotel/real_scenic_mountains.jpg'),
+    image: getAssetUrl('assets/aistudio/IMG-20261114-WA0110_427780c2.jpg'),
     bestSeason: 'May to October for pony rides; snow throughout early summer',
   },
   {
@@ -229,7 +237,7 @@ export const ATTRACTIONS_DATA: Attraction[] = [
     highlight: 'Crystal turquoise mountain stream right next to the resort',
     description:
       'Flowing through Ganderbal district, Nallah Sindh is the lifeline of the valley. Enjoy serene riverside morning walks, photography, fresh alpine breeze, and angling for Himalayan trout.',
-    image: getAssetUrl('assets/hotel/real_sindh_river.jpg'),
+    image: getAssetUrl('assets/aistudio/IMG-20261114-WA0104_de27b9e3.jpg'),
     bestSeason: 'All seasons; soothing waterflow and golden sunset reflections',
   },
   {
@@ -241,7 +249,7 @@ export const ATTRACTIONS_DATA: Attraction[] = [
     highlight: 'Traditional Kashmiri village life, walnut groves & craft markets',
     description:
       'A peaceful township set amidst terraced rice paddies, traditional Kashmiri wooden houses, walnut drying racks, and vibrant local bazaars offering pure saffron, dry fruits, and handcrafted shawls.',
-    image: getAssetUrl('assets/hotel/real_valley_destinations.jpg'),
+    image: getAssetUrl('assets/aistudio/IMG-20261114-WA0107_41283de0.jpg'),
     bestSeason: 'March to November',
   },
   {
@@ -253,7 +261,7 @@ export const ATTRACTIONS_DATA: Attraction[] = [
     highlight: 'Dramatic canyon landscapes and rushing river bends',
     description:
       'Nestled between Kangan and Sonamarg, Gagangir is known for towering limestone cliffs, tranquil riverside picnic spots, and dense coniferous pine woods.',
-    image: getAssetUrl('assets/hotel/real_exterior_lawns.jpg'),
+    image: getAssetUrl('assets/aistudio/IMG-20261114-WA0112_2297db8b.jpg'),
     bestSeason: 'April to October',
   },
   {
@@ -265,7 +273,7 @@ export const ATTRACTIONS_DATA: Attraction[] = [
     highlight: 'Base camp for holy Amarnath Cave pilgrimage & high altitude valleys',
     description:
       'A dramatic wide mountain valley framed by rugged precipices. Known as the crucial base for the sacred Amarnath yatra, offering rugged Himalayan topography.',
-    image: getAssetUrl('assets/hotel/real_kashmir_sights_grid.jpg'),
+    image: getAssetUrl('assets/aistudio/IMG-20261114-WA0071_4b5683d7.jpg'),
     bestSeason: 'June to September',
   },
   {
@@ -276,8 +284,8 @@ export const ATTRACTIONS_DATA: Attraction[] = [
     category: 'river',
     highlight: 'Unique reddish mineral waters revered for natural purity',
     description:
-      'A scenic spot 6 km past Sonamarg where mountain mountain rivulets meet the Indus drainage. The water possesses a distinct reddish hue and is believed to have restorative properties.',
-    image: getAssetUrl('assets/hotel/real_trek_guide.jpg'),
+      'A scenic spot 6 km past Sonamarg where mountain rivulets meet the Indus drainage. The water possesses a distinct reddish hue and is believed to have restorative properties.',
+    image: getAssetUrl('assets/aistudio/IMG-20261114-WA0103_0297e237.jpg'),
     bestSeason: 'Summer & Autumn',
   },
 ];
@@ -293,7 +301,7 @@ export const WAZWAN_DISHES: WazwanDish[] = [
       'Traditional aromatic green tea infused with real Kashmiri saffron strands, green cardamom, cinnamon bark, and generously garnished with crushed toasted almonds.',
     ingredients: 'Pure Pampore Saffron, Green Tea leaves, Cinnamon, Green Cardamom, Crushed Almonds',
     isSignature: true,
-    image: getAssetUrl('assets/images/kashmiri_kahwa_tea_table_1794390222933.jpg'),
+    image: getAssetUrl('assets/aistudio/IMG-20261114-WA0056_b1c02bf9.jpg'),
   },
   {
     id: 'noon-chai-girda',
@@ -305,7 +313,7 @@ export const WAZWAN_DISHES: WazwanDish[] = [
       'Iconic pink salted tea brewed patiently with special tea leaves, baking soda, and fresh cow milk. Served hot with freshly tandoor-baked Kashmiri Girda and flaky Lavasa bread with homemade butter.',
     ingredients: 'Special mountain green tea, sea salt, fresh whole milk, baking soda, fresh baker breads',
     isSignature: true,
-    image: getAssetUrl('assets/hotel/real_noon_chai_bread.jpg'),
+    image: getAssetUrl('assets/aistudio/IMG-20261114-WA0048_09ef1763.jpg'),
   },
   {
     id: 'rogan-josh',
@@ -317,7 +325,7 @@ export const WAZWAN_DISHES: WazwanDish[] = [
       'The crown jewel of Wazwan. Tender Kashmiri mutton slow-simmered in an aromatic gravy infused with dried Kashmiri red chillies (Mawal), fennel powder (Saunf), and wild mountain shallots (Pran).',
     ingredients: 'Tender lamb cuts, Kashmiri deggi mirch, dried ginger powder, fennel, mustard oil, whole spices',
     isSignature: true,
-    image: getAssetUrl('assets/hotel/real_wazwan_thali.jpg'),
+    image: getAssetUrl('assets/aistudio/IMG-20261114-WA0063_415d5162.jpg'),
   },
   {
     id: 'gushtaba',
@@ -329,7 +337,7 @@ export const WAZWAN_DISHES: WazwanDish[] = [
       'Velvety mutton meatballs hand-pounded on stone logs for hours, cooked in a silky, rich yogurt gravy spiced with green cardamom and pure ghee. Traditionally served at the conclusion of a royal Wazwan.',
     ingredients: 'Hand-beaten fine minced mutton, fresh curd/yogurt, desi ghee, cardamom, mint',
     isSignature: true,
-    image: getAssetUrl('assets/hotel/real_feast_wazwan.jpg'),
+    image: getAssetUrl('assets/aistudio/IMG-20261114-WA0049_645bfcf4.jpg'),
   },
   {
     id: 'rista',
@@ -341,7 +349,7 @@ export const WAZWAN_DISHES: WazwanDish[] = [
       'Delicate hand-pounded meat spheres simmered in a vibrant crimson saffron and red pepper broth. Bursting with aromatic warmth and melt-in-the-mouth texture.',
     ingredients: 'Pounded meat, cockscomb extract (Mawal), saffron, ginger, shallots',
     isSignature: false,
-    image: getAssetUrl('assets/hotel/wazwan_dish.jpg'),
+    image: getAssetUrl('assets/aistudio/IMG-20261114-WA0054_b186b23d.jpg'),
   },
   {
     id: 'kashmiri-dum-aloo',
@@ -353,7 +361,7 @@ export const WAZWAN_DISHES: WazwanDish[] = [
       'Baby potatoes pricked and fried golden, then slow-steamed (dum) in a thick, tangy yogurt and fennel sauce with dried ginger. A vegetarian culinary triumph.',
     ingredients: 'Himalayan baby potatoes, Kashmiri red chilli, yogurt, saunf, sonth, hing',
     isSignature: true,
-    image: getAssetUrl('assets/hotel/real_wazwan_thali.jpg'),
+    image: getAssetUrl('assets/aistudio/IMG-20261114-WA0055_31d8d2dd.jpg'),
   },
   {
     id: 'kashmiri-pulao',
@@ -365,7 +373,7 @@ export const WAZWAN_DISHES: WazwanDish[] = [
       'Fragrant long-grain basmati rice cooked with saffron strands, raisins, cashews, walnuts, pomegranate pearls, and fresh apple slices in pure desi ghee.',
     ingredients: 'Basmati rice, saffron, dry fruits, fresh local fruits, ghee, whole spices',
     isSignature: false,
-    image: getAssetUrl('assets/hotel/real_family_dining.jpg'),
+    image: getAssetUrl('assets/aistudio/IMG-20261114-WA0051_28fbcf12.jpg'),
   },
 ];
 
@@ -540,6 +548,42 @@ export const TRAINING_COURSES: TrainingCourse[] = [
     intakeCapacity: 35,
   },
 ];
+
+export const SKILL_OBJECTIVES = [
+  {
+    number: '01',
+    title: 'Provide Practical Industry-Based Training',
+    description:
+      'Bridge classroom hospitality knowledge with live resort operations in Front Office, Housekeeping, Food & Beverage Service, and Culinary Preparation.',
+  },
+  {
+    number: '02',
+    title: 'Create Employment Opportunities for Local Youth',
+    description:
+      'Equip young talent from Ganderbal, Kangan, and surrounding valleys with job-ready credentials for premier hotels and eco-resorts across Jammu & Kashmir.',
+  },
+  {
+    number: '03',
+    title: 'Encourage Women Empowerment',
+    description:
+      'Foster safe, supportive skill workshops and leadership pathways enabling local women to excel in culinary arts, guest hospitality, and homestay hosting.',
+  },
+  {
+    number: '04',
+    title: 'Promote Tourism Entrepreneurship & Homestay Businesses',
+    description:
+      'Mentor aspiring village entrepreneurs to establish and market authentic, compliant Kashmiri homestays and guided travel services.',
+  },
+  {
+    number: '05',
+    title: 'Support Internships & On-the-Job Training',
+    description:
+      'Deliver supervised on-property internships where trainees manage real guest check-ins, room turnaround standards, and traditional Wazwan service.',
+  },
+];
+
+export const SKILL_VISION =
+  'To develop Hotel Pahadon Ka Ghar as a centre for hospitality learning, practical training and sustainable tourism development in Jammu & Kashmir.';
 
 export const INITIAL_BOOKINGS: Booking[] = [
   {

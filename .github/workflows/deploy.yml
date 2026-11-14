@@ -33,7 +33,7 @@ jobs:
         run: npm install --legacy-peer-deps
 
       - name: Run unit tests
-        run: npx --yes tsx --test src/utils/booking.test.ts src/utils/weather.test.ts src/utils/newsletter.test.ts src/utils/faq.test.ts src/utils/experiences.test.ts src/utils/assets.test.ts
+        run: npx --yes tsx --test src/utils/booking.test.ts src/utils/weather.test.ts src/utils/newsletter.test.ts src/utils/faq.test.ts src/utils/experiences.test.ts src/utils/assets.test.ts src/utils/gallery.test.ts
 
       - name: Build production bundle
         run: npm run build

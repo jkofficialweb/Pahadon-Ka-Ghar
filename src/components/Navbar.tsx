@@ -10,6 +10,8 @@ import {
   GraduationCap,
   BedDouble,
   Home as HomeIcon,
+  Briefcase,
+  Camera,
 } from 'lucide-react';
 import { HOTEL_INFO } from '../data/hotelData.ts';
 
@@ -28,9 +30,11 @@ export const Navbar: React.FC<NavbarProps> = ({
 
   const navLinks = [
     { id: 'home', label: 'Home', icon: HomeIcon },
-    { id: 'rooms', label: 'Rooms & Stays', icon: BedDouble },
-    { id: 'dining', label: 'Dining & Wazwan', icon: UtensilsCrossed },
+    { id: 'rooms', label: 'Rooms', icon: BedDouble },
+    { id: 'services', label: 'Our Services', icon: Briefcase },
+    { id: 'dining', label: 'Dining', icon: UtensilsCrossed },
     { id: 'attractions', label: 'Attractions', icon: Compass },
+    { id: 'gallery', label: 'Gallery', icon: Camera },
     { id: 'academy', label: 'Skill Academy', icon: GraduationCap },
     { id: 'management', label: 'Booking Desk', icon: CalendarCheck },
   ];
@@ -65,8 +69,8 @@ export const Navbar: React.FC<NavbarProps> = ({
         </div>
       </div>
 
-      {/* Main Top Bar Contract: 3 zones separated by gap-8 */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 flex items-center justify-between gap-8">
+      {/* Main Top Bar Contract: 3 zones separated cleanly */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 flex items-center justify-between gap-4 xl:gap-8">
         {/* Zone 1: Brand title, single line wordmark */}
         <button
           onClick={() => handleNavClick('home')}
@@ -86,8 +90,8 @@ export const Navbar: React.FC<NavbarProps> = ({
           </div>
         </button>
 
-        {/* Zone 2: 4-6 concise single-line nav links */}
-        <nav className="hidden lg:flex items-center gap-6 text-sm font-medium text-stone-600">
+        {/* Zone 2: Single-line nav links */}
+        <nav className="hidden lg:flex items-center gap-4 xl:gap-5 text-[13px] font-medium text-stone-600">
           {navLinks.map((link) => {
             const isActive = activeTab === link.id;
             return (

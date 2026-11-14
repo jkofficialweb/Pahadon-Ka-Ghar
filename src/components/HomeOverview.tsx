@@ -21,8 +21,10 @@ import { getAssetUrl } from '../utils/assets.ts';
 interface HomeOverviewProps {
   onOpenBookingModal: (roomTypeId?: string) => void;
   onNavigateToRooms: () => void;
+  onNavigateToServices: () => void;
   onNavigateToDining: () => void;
   onNavigateToAttractions: () => void;
+  onNavigateToGallery: () => void;
   onNavigateToAcademy: () => void;
   checkIn: string;
   setCheckIn: (val: string) => void;
@@ -37,8 +39,10 @@ interface HomeOverviewProps {
 export const HomeOverview: React.FC<HomeOverviewProps> = ({
   onOpenBookingModal,
   onNavigateToRooms,
+  onNavigateToServices,
   onNavigateToDining,
   onNavigateToAttractions,
+  onNavigateToGallery,
   onNavigateToAcademy,
   checkIn,
   setCheckIn,
@@ -137,13 +141,19 @@ export const HomeOverview: React.FC<HomeOverviewProps> = ({
               ))}
             </div>
 
-            <div className="pt-2 flex items-center gap-4">
+            <div className="pt-2 flex flex-wrap items-center gap-3">
               <button
                 onClick={onNavigateToRooms}
                 className="px-5 py-2.5 bg-amber-800 hover:bg-amber-900 text-white text-xs font-semibold rounded-xl shadow-xs transition-colors cursor-pointer flex items-center gap-2"
               >
                 <span>View Stays & Availability</span>
                 <ArrowRight className="w-3.5 h-3.5" />
+              </button>
+              <button
+                onClick={onNavigateToServices}
+                className="px-4 py-2.5 bg-amber-50 hover:bg-amber-100 text-amber-900 border border-amber-200 text-xs font-semibold rounded-xl transition-colors cursor-pointer"
+              >
+                Our Services
               </button>
               <button
                 onClick={onNavigateToAttractions}
@@ -158,32 +168,32 @@ export const HomeOverview: React.FC<HomeOverviewProps> = ({
           <div className="grid grid-cols-2 gap-3.5">
             <div className="rounded-2xl overflow-hidden aspect-4/3 bg-stone-100 shadow-xs">
               <img
-                src={getAssetUrl('assets/hotel/real_exterior_lawns.jpg')}
-                alt="Hotel exterior and lush lawns"
+                src={getAssetUrl('assets/aistudio/IMG-20261114-WA0097_d662429d.jpg')}
+                alt="Hotel Pahadon Ka Ghar exterior and lush lawns"
                 referrerPolicy="no-referrer"
                 className="w-full h-full object-cover hover:scale-103 transition-transform duration-500"
               />
             </div>
             <div className="rounded-2xl overflow-hidden aspect-4/3 bg-stone-100 shadow-xs">
               <img
-                src={getAssetUrl('assets/images/room_kashmiri_wood_suite_1794390221069.jpg')}
-                alt="Cozy cedar wood bedroom suite"
+                src={getAssetUrl('assets/aistudio/IMG-20261114-WA0092_b0bc1e1f.jpg')}
+                alt="Deluxe mountain-view guest suite at Pahadon Ka Ghar"
                 referrerPolicy="no-referrer"
                 className="w-full h-full object-cover hover:scale-103 transition-transform duration-500"
               />
             </div>
             <div className="rounded-2xl overflow-hidden aspect-4/3 bg-stone-100 shadow-xs">
               <img
-                src={getAssetUrl('assets/images/kashmiri_kahwa_tea_table_1794390222933.jpg')}
-                alt="Kashmiri Kahwa tea in garden"
+                src={getAssetUrl('assets/aistudio/IMG-20261114-WA0047_2399a106.jpg')}
+                alt="Traditional Kashmiri Kahwa and tea spread in garden"
                 referrerPolicy="no-referrer"
                 className="w-full h-full object-cover hover:scale-103 transition-transform duration-500"
               />
             </div>
             <div className="rounded-2xl overflow-hidden aspect-4/3 bg-stone-100 shadow-xs">
               <img
-                src={getAssetUrl('assets/hotel/real_sindh_river.jpg')}
-                alt="Sindh river flowing in Kashmir"
+                src={getAssetUrl('assets/aistudio/IMG-20261114-WA0104_de27b9e3.jpg')}
+                alt="Sindh river flowing near Hariganiwan in Kashmir"
                 referrerPolicy="no-referrer"
                 className="w-full h-full object-cover hover:scale-103 transition-transform duration-500"
               />
@@ -267,7 +277,7 @@ export const HomeOverview: React.FC<HomeOverviewProps> = ({
 
       {/* 5. Scenery & Property Masonry Photo Gallery */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SceneryMasonryGallery />
+        <SceneryMasonryGallery onOpenFullGallery={onNavigateToGallery} />
       </div>
 
       {/* 6. Curated Local Experiences (Trekking, Villages & Bird Watching) */}

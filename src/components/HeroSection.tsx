@@ -46,13 +46,13 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
       {/* Background Image with Measured Contrast Scrim */}
       <div className="absolute inset-0">
         <img
-          src={getAssetUrl('assets/images/hero_kashmir_mountain_resort_1794390221174.jpg')}
+          src={getAssetUrl('assets/aistudio/IMG-20261114-WA0115_c0a9df9c.jpg')}
           alt="Pahadon Ka Ghar Kashmir mountain chalet retreat"
           referrerPolicy="no-referrer"
           className="w-full h-full object-cover object-center scale-105 transition-transform duration-1000"
         />
         {/* Measured dark scrim for WCAG AA readability */}
-        <div className="absolute inset-0 bg-gradient-to-t from-stone-950/90 via-stone-900/60 to-stone-900/40" />
+        <div className="absolute inset-0 bg-gradient-to-t from-stone-950/92 via-stone-900/65 to-stone-950/55" />
       </div>
 
       {/* Hero Content Area */}

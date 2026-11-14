@@ -6,13 +6,10 @@ import {
   X,
   ChevronLeft,
   ChevronRight,
-  Sparkles,
-  TreePine,
-  Waves,
-  Home,
-  SunMedium,
+  ArrowRight,
 } from 'lucide-react';
 import { getAssetUrl } from '../utils/assets.ts';
+import { GALLERY_PHOTOS } from '../data/galleryData.ts';
 
 export interface GalleryItem {
   id: string;
@@ -28,57 +25,57 @@ export interface GalleryItem {
 const GALLERY_ITEMS: GalleryItem[] = [
   {
     id: 'resort-patio-flowers',
-    title: 'Manicured Lawn & Mountain Rose Patio',
+    title: 'Manicured Lawn & Mountain Rose Garden',
     category: 'resort',
     categoryLabel: 'Resort Grounds',
     location: 'Pahadon Ka Ghar Garden, Hariganiwan',
     description:
-      'Charming outdoor seating framed by blooming climbing roses, morning tea tables, and an unobstructed panorama of the snowy Himalayan peaks.',
-    image: getAssetUrl('assets/images/resort_garden_flower_patio_1794396328547.jpg'),
+      'Real on-site view of our landscaped lawns, blooming rose bushes, and outdoor garden seating framed by the surrounding peaks.',
+    image: getAssetUrl('assets/aistudio/IMG-20261114-WA0093_7af93250.jpg'),
     aspectClass: 'aspect-3/4',
   },
   {
     id: 'hariganiwan-river-morning',
-    title: 'Crystal Sindh Riverbed & Alpine Wildflowers',
+    title: 'Crystal Sindh River & Mountain Ridge',
     category: 'river',
     categoryLabel: 'River & Trails',
     location: 'Sindh River Trail (350m from resort)',
     description:
-      'Glacial torrents meandering over smooth riverbed stones, surrounded by aromatic fir forests, wild lupines, and fresh morning Himalayan mist.',
-    image: getAssetUrl('assets/images/hariganiwan_morning_river_1794396327876.jpg'),
+      'Pure glacial waters of Nallah Sindh flowing over smooth alpine stones steps away from the retreat.',
+    image: getAssetUrl('assets/aistudio/IMG-20261114-WA0113_188e2417.jpg'),
     aspectClass: 'aspect-4/3',
   },
   {
     id: 'kashmiri-village-orchard',
-    title: 'Traditional Terraced Orchards & Wood Cottages',
-    category: 'village',
-    categoryLabel: 'Village Life',
-    location: 'Hariganiwan Mountain Hamlet, Kangan',
-    description:
-      'Centuries-old Kashmiri wooden houses with sloping slate roofs nestled among terraced walnut groves and wooden bridges over mountain streams.',
-    image: getAssetUrl('assets/images/kashmiri_village_orchard_1794396329655.jpg'),
-    aspectClass: 'aspect-16/9',
-  },
-  {
-    id: 'resort-evening-bonfire',
-    title: 'Starry Alpine Twilight & Garden Bonfire',
-    category: 'resort',
-    categoryLabel: 'Resort Grounds',
-    location: 'Evening Bonfire Circle, Resort Lawn',
-    description:
-      'Warm wood-fired campfire gathering under clear star-filled mountain skies with fairy-lit gazebos, warm blankets, and hot saffron Kahwa.',
-    image: getAssetUrl('assets/images/resort_evening_bonfire_lawn_1794396330027.jpg'),
-    aspectClass: 'aspect-4/3',
-  },
-  {
-    id: 'resort-cottage-peaks',
-    title: 'Wooden Chalet Retreat Nestled in Pines',
+    title: 'Panoramic Front Elevation & Lush Lawns',
     category: 'resort',
     categoryLabel: 'Resort Grounds',
     location: 'Old Sonamarg Road, Hariganiwan',
     description:
-      'The scenic timber facade of Pahadon Ka Ghar surrounded by flower beds, stone paths, and pine-clad mountain amphitheater.',
-    image: getAssetUrl('assets/images/hero_kashmir_mountain_resort_1794390221174.jpg'),
+      'Authentic wooden balconies, open mountain sky, and peaceful lawns welcoming families visiting Kangan and Sonamarg.',
+    image: getAssetUrl('assets/aistudio/IMG-20261114-WA0094_35754765.jpg'),
+    aspectClass: 'aspect-16/9',
+  },
+  {
+    id: 'resort-glamping-grounds',
+    title: 'Garden Glamping Tents at Twilight',
+    category: 'resort',
+    categoryLabel: 'Resort Grounds',
+    location: 'Resort Lawn Camping Zone',
+    description:
+      'Weatherproof insulated garden tents pitched amidst mountain greenery for starlit nights in Hariganiwan.',
+    image: getAssetUrl('assets/aistudio/IMG-20261114-WA0041_6fa8f2fa.jpg'),
+    aspectClass: 'aspect-4/3',
+  },
+  {
+    id: 'resort-cottage-peaks',
+    title: 'Timber Facade & Mountain Courtyard',
+    category: 'village',
+    categoryLabel: 'Village Heritage',
+    location: 'Hariganiwan, Kangan',
+    description:
+      'Traditional mountain timber craftsmanship blended with spacious modern guest balconies and parking courtyard.',
+    image: getAssetUrl('assets/aistudio/IMG-20261114-WA0099_430ba837.jpg'),
     aspectClass: 'aspect-16/10',
   },
   {
@@ -88,35 +85,41 @@ const GALLERY_ITEMS: GalleryItem[] = [
     categoryLabel: 'Resort Grounds',
     location: 'Outdoor Tea Patio, Pahadon Ka Ghar',
     description:
-      'Handcrafted brass samovar pouring steaming golden saffron tea garnished with almonds and fresh Kashmiri Girda bread against the mountains.',
-    image: getAssetUrl('assets/images/kashmiri_kahwa_tea_table_1794390222933.jpg'),
+      'Copper samovar pouring steaming saffron Kahwa garnished with crushed almonds in our mountain garden.',
+    image: getAssetUrl('assets/aistudio/IMG-20261114-WA0056_b1c02bf9.jpg'),
     aspectClass: 'aspect-4/3',
   },
   {
-    id: 'real-exterior-lawns',
-    title: 'Sunlit Balconies & Open Village Vista',
-    category: 'resort',
-    categoryLabel: 'Resort Grounds',
-    location: 'Resort Front Balconies & Green Lawns',
+    id: 'real-exterior-balcony',
+    title: 'Valley Balcony & Misty Ridge Vista',
+    category: 'village',
+    categoryLabel: 'Village Heritage',
+    location: 'Resort Upper Balcony',
     description:
-      'Direct on-site snapshot of our peaceful green lawns, flower beds, and wooden sit-out balconies facing the valley.',
-    image: getAssetUrl('assets/hotel/real_exterior_lawns.jpg'),
+      'Morning mist drifting across the pine hills of Ganderbal viewed directly from our upper-floor balcony.',
+    image: getAssetUrl('assets/aistudio/IMG-20261114-WA0114_0ffb00dd.jpg'),
     aspectClass: 'aspect-16/10',
   },
   {
-    id: 'sonamarg-golden-valley',
-    title: 'Sonamarg Alpine Meadows & River Course',
+    id: 'sindh-river-banks',
+    title: 'Sindh Valley Banks & Turquoise Stream',
     category: 'river',
     categoryLabel: 'River & Trails',
-    location: 'Upper Sindh Valley (32 km excursion)',
+    location: 'Hariganiwan Riverside (4 min walk)',
     description:
-      'Breathtaking turquoise mountain river sweeping through golden alpine meadows with horse riders under jagged snow walls.',
-    image: getAssetUrl('assets/images/sonamarg_thajiwas_glacier_1794390222847.jpg'),
+      'Scenic gravel banks and turquoise waters ideal for quiet morning walks and mountain photography.',
+    image: getAssetUrl('assets/aistudio/IMG-20261114-WA0104_de27b9e3.jpg'),
     aspectClass: 'aspect-16/9',
   },
 ];
 
-export const SceneryMasonryGallery: React.FC = () => {
+interface SceneryMasonryGalleryProps {
+  onOpenFullGallery?: () => void;
+}
+
+export const SceneryMasonryGallery: React.FC<SceneryMasonryGalleryProps> = ({
+  onOpenFullGallery,
+}) => {
   const [selectedFilter, setSelectedFilter] = useState<'all' | 'resort' | 'river' | 'village'>('all');
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
@@ -231,6 +234,19 @@ export const SceneryMasonryGallery: React.FC = () => {
           </div>
         ))}
       </div>
+
+      {onOpenFullGallery && (
+        <div className="pt-2 text-center">
+          <button
+            onClick={onOpenFullGallery}
+            className="inline-flex items-center gap-2 px-6 py-3 bg-amber-800 hover:bg-amber-900 text-white text-xs sm:text-sm font-semibold rounded-xl shadow-xs transition-colors cursor-pointer"
+          >
+            <Camera className="w-4 h-4" />
+            <span>View Complete Gallery ({GALLERY_PHOTOS.length} Photos)</span>
+            <ArrowRight className="w-4 h-4" />
+          </button>
+        </div>
+      )}
 
       {/* Lightbox Modal */}
       {lightboxIndex !== null && (

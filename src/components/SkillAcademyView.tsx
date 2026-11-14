@@ -1,16 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   GraduationCap,
-  Users,
-  Award,
-  BookOpen,
-  Briefcase,
-  HeartHandshake,
   CheckCircle2,
   Send,
-  Building,
+  Target,
+  Camera,
+  Maximize2,
+  X,
+  ChevronLeft,
+  ChevronRight,
 } from 'lucide-react';
-import { TRAINING_COURSES, HOTEL_INFO } from '../data/hotelData.ts';
+import {
+  TRAINING_COURSES,
+  SKILL_OBJECTIVES,
+  SKILL_VISION,
+} from '../data/hotelData.ts';
+import { TRAINING_PHOTOS } from '../data/galleryData.ts';
 import { getAssetUrl } from '../utils/assets.ts';
 
 export const SkillAcademyView: React.FC = () => {
@@ -19,6 +24,28 @@ export const SkillAcademyView: React.FC = () => {
   const [inquiryType, setInquiryType] = useState<'student' | 'institute' | 'partner'>('student');
   const [inquiryMessage, setInquiryMessage] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+
+  useEffect(() => {
+    if (lightboxIndex === null) return;
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setLightboxIndex(null);
+      if (e.key === 'ArrowRight') {
+        setLightboxIndex((prev) =>
+          prev === null ? null : (prev + 1) % TRAINING_PHOTOS.length
+        );
+      }
+      if (e.key === 'ArrowLeft') {
+        setLightboxIndex((prev) =>
+          prev === null
+            ? null
+            : (prev - 1 + TRAINING_PHOTOS.length) % TRAINING_PHOTOS.length
+        );
+      }
+    };
+    window.addEventListener('keydown', handleKey);
+    return () => window.removeEventListener('keydown', handleKey);
+  }, [lightboxIndex]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -48,7 +75,7 @@ export const SkillAcademyView: React.FC = () => {
             Our Core Vision
           </div>
           <h2 className="text-2xl sm:text-3xl font-bold font-serif leading-tight">
-            "To develop Hotel Pahadon Ka Ghar as a centre for hospitality learning, practical training and sustainable tourism development in Jammu & Kashmir."
+            &ldquo;{SKILL_VISION}&rdquo;
           </h2>
           <p className="text-amber-100 text-xs sm:text-sm leading-relaxed">
             By connecting real hotel operations with practical classroom instruction, trainees gain direct hands-on experience in cooking, customer service, housekeeping, and mountain tour management.
@@ -78,8 +105,8 @@ export const SkillAcademyView: React.FC = () => {
         <div className="space-y-3">
           <div className="aspect-16/10 rounded-2xl overflow-hidden bg-amber-950 border border-amber-800 shadow-md">
             <img
-              src={getAssetUrl('assets/hotel/real_training_class.jpg')}
-              alt="Practical hospitality training at Pahadon Ka Ghar"
+              src={getAssetUrl('assets/aistudio/IMG-20261114-WA0022_a79d0f9f.jpg')}
+              alt="Practical hospitality training batch at Pahadon Ka Ghar"
               referrerPolicy="no-referrer"
               className="w-full h-full object-cover"
             />
@@ -89,6 +116,48 @@ export const SkillAcademyView: React.FC = () => {
           </div>
         </div>
       </div>
+
+      {/* Our Objectives Section */}
+      <section aria-labelledby="skill-objectives-heading" className="space-y-6">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-2">
+          <div>
+            <div className="flex items-center gap-2 text-xs font-semibold text-amber-800 uppercase tracking-wider">
+              <Target className="w-4 h-4" />
+              <span>Training & Empowerment Charter</span>
+            </div>
+            <h2
+              id="skill-objectives-heading"
+              className="text-2xl font-bold text-stone-900 font-serif mt-1"
+            >
+              Our Objectives
+            </h2>
+          </div>
+          <span className="text-xs text-stone-500">
+            Hospitality Skill Development & Sustainable Tourism
+          </span>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+          {SKILL_OBJECTIVES.map((obj) => (
+            <div
+              key={obj.number}
+              className="bg-white rounded-2xl border border-stone-200/90 p-6 shadow-xs space-y-2.5 flex flex-col justify-between"
+            >
+              <div className="space-y-2">
+                <span className="text-xs font-bold font-mono tabular-nums text-amber-800 tracking-wider block">
+                  OBJECTIVE {obj.number}
+                </span>
+                <h3 className="font-bold text-base text-stone-900 font-serif leading-snug">
+                  {obj.title}
+                </h3>
+                <p className="text-xs text-stone-600 leading-relaxed">
+                  {obj.description}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
 
       {/* Training Courses Cards */}
       <div className="space-y-6">
@@ -143,6 +212,60 @@ export const SkillAcademyView: React.FC = () => {
           ))}
         </div>
       </div>
+
+      {/* Real Training Photos Gallery (All 13 authentic Skill Academy photos) */}
+      <section aria-labelledby="training-photos-heading" className="space-y-6">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-2">
+          <div>
+            <div className="flex items-center gap-2 text-xs font-semibold text-amber-800 uppercase tracking-wider">
+              <Camera className="w-4 h-4" />
+              <span>Hands-On Hospitality Workshops</span>
+            </div>
+            <h2
+              id="training-photos-heading"
+              className="text-2xl font-bold text-stone-900 font-serif mt-1"
+            >
+              Practical Training &amp; Workshop Gallery
+            </h2>
+          </div>
+          <span className="text-xs text-stone-500 font-mono tabular-nums">
+            {TRAINING_PHOTOS.length} authentic training photographs
+          </span>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+          {TRAINING_PHOTOS.map((photo, idx) => (
+            <button
+              type="button"
+              key={photo.id}
+              onClick={() => setLightboxIndex(idx)}
+              className="group relative text-left rounded-2xl overflow-hidden bg-stone-100 border border-stone-200/90 shadow-2xs hover:shadow-lg transition-all cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-700"
+            >
+              <div className="relative aspect-4/3 overflow-hidden bg-stone-200">
+                <img
+                  src={photo.image}
+                  alt={photo.title}
+                  referrerPolicy="no-referrer"
+                  loading="lazy"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-stone-950/80 via-stone-950/15 to-transparent" />
+                <div className="absolute top-2.5 right-2.5 w-7 h-7 rounded-lg bg-stone-950/60 border border-white/15 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                  <Maximize2 className="w-3.5 h-3.5" />
+                </div>
+                <div className="absolute bottom-3 left-3.5 right-3.5 text-white">
+                  <span className="text-[11px] font-medium text-amber-300 block truncate">
+                    {photo.location}
+                  </span>
+                  <h3 className="text-xs sm:text-sm font-bold font-serif leading-snug line-clamp-2">
+                    {photo.title}
+                  </h3>
+                </div>
+              </div>
+            </button>
+          ))}
+        </div>
+      </section>
 
       {/* Inquiry & Partnership Form */}
       <div className="bg-stone-50 rounded-3xl p-8 sm:p-10 border border-stone-200 max-w-3xl mx-auto shadow-xs">
@@ -201,7 +324,7 @@ export const SkillAcademyView: React.FC = () => {
                   <button
                     type="button"
                     key={item.id}
-                    onClick={() => setInquiryType(item.id as any)}
+                    onClick={() => setInquiryType(item.id as 'student' | 'institute' | 'partner')}
                     className={`py-2 px-2 text-[11px] rounded-xl border text-center font-medium cursor-pointer transition-colors ${
                       inquiryType === item.id
                         ? 'bg-amber-800 text-white border-amber-800'
@@ -237,6 +360,76 @@ export const SkillAcademyView: React.FC = () => {
           </form>
         )}
       </div>
+
+      {/* Training Gallery Lightbox */}
+      {lightboxIndex !== null && TRAINING_PHOTOS[lightboxIndex] && (
+        <div
+          onClick={() => setLightboxIndex(null)}
+          className="fixed inset-0 z-50 bg-stone-950/90 backdrop-blur-md flex items-center justify-center p-4 sm:p-6"
+        >
+          <div
+            onClick={(e) => e.stopPropagation()}
+            className="relative max-w-4xl w-full bg-stone-900 rounded-2xl overflow-hidden border border-stone-800 shadow-2xl flex flex-col max-h-[92vh]"
+          >
+            <div className="px-5 py-3.5 bg-stone-950/80 border-b border-stone-800 flex items-center justify-between text-white shrink-0">
+              <div className="flex items-center gap-2 text-xs">
+                <span className="text-amber-400 font-semibold">Skill Academy Training</span>
+                <span className="text-stone-600">·</span>
+                <span className="text-stone-400 font-mono tabular-nums text-[11px]">
+                  {lightboxIndex + 1} of {TRAINING_PHOTOS.length}
+                </span>
+              </div>
+              <button
+                onClick={() => setLightboxIndex(null)}
+                className="p-1.5 text-stone-400 hover:text-white rounded-lg hover:bg-stone-800 transition-colors cursor-pointer"
+                aria-label="Close training photo preview"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+
+            <div className="relative flex-1 bg-black flex items-center justify-center overflow-hidden min-h-[300px]">
+              <img
+                src={TRAINING_PHOTOS[lightboxIndex].image}
+                alt={TRAINING_PHOTOS[lightboxIndex].title}
+                referrerPolicy="no-referrer"
+                className="max-h-[65vh] w-auto max-w-full object-contain select-none"
+              />
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setLightboxIndex(
+                    (lightboxIndex - 1 + TRAINING_PHOTOS.length) % TRAINING_PHOTOS.length
+                  );
+                }}
+                className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-stone-900/75 border border-white/20 text-white flex items-center justify-center hover:bg-stone-900 transition-colors cursor-pointer"
+                aria-label="Previous training photo"
+              >
+                <ChevronLeft className="w-5 h-5" />
+              </button>
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setLightboxIndex((lightboxIndex + 1) % TRAINING_PHOTOS.length);
+                }}
+                className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-stone-900/75 border border-white/20 text-white flex items-center justify-center hover:bg-stone-900 transition-colors cursor-pointer"
+                aria-label="Next training photo"
+              >
+                <ChevronRight className="w-5 h-5" />
+              </button>
+            </div>
+
+            <div className="p-5 bg-stone-950 text-white space-y-1 shrink-0">
+              <h3 className="font-bold text-base font-serif text-white">
+                {TRAINING_PHOTOS[lightboxIndex].title}
+              </h3>
+              <p className="text-xs text-stone-300 leading-relaxed">
+                {TRAINING_PHOTOS[lightboxIndex].description}
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

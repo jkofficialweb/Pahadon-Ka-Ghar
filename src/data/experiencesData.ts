@@ -30,7 +30,7 @@ export const LOCAL_EXPERIENCES: LocalExperience[] = [
       'Starting right at Pahadon Ka Ghar with a peaceful 4-minute walk through the village apple orchards, this trail follows the boulder-strewn banks of Nallah Sindh. The path weaves gently between pine groves, ancient river rocks, and calm turquoise eddies. Ideal for families, couples, and morning photography walks with the snow-capped Harmukh range rising directly above.',
     localHostTip:
       'Ask the front desk for our complimentary stainless-steel Kahwa thermos and brass cups before setting out. The quietest gravel bank is 600m upstream past the wooden suspension footbridge.',
-    image: getAssetUrl('assets/images/hariganiwan_morning_river_1794396327876.jpg'),
+    image: getAssetUrl('assets/aistudio/IMG-20261114-WA0113_188e2417.jpg'),
     guideAvailable: true,
     gearProvided: ['Carved walnut walking sticks', 'Insulated thermos flask', 'Riverside sitting mats'],
     recommendedWear: 'Comfortable walking shoes with rubber grip, light fleece jacket for mornings',
@@ -62,7 +62,7 @@ export const LOCAL_EXPERIENCES: LocalExperience[] = [
       'A world-renowned day trek rising from Sonamarg meadows toward the Thajiwas Glacier. Walking alongside the roaring glacial brook, you pass through fragrant pine woods before emerging onto open moraines flanked by soaring 4,000-meter peaks. You can walk the trail on foot or hire local ponies guided by our verified mountain partners.',
     localHostTip:
       'Leave Hariganiwan around 8:00 AM after a warm Wazwan breakfast. You will reach Sonamarg by 8:45 AM ahead of day-tripper buses from Srinagar, experiencing the glacier in utter mountain tranquility.',
-    image: getAssetUrl('assets/images/sonamarg_thajiwas_glacier_1794390222847.jpg'),
+    image: getAssetUrl('assets/aistudio/IMG-20261114-WA0110_427780c2.jpg'),
     guideAvailable: true,
     gearProvided: ['Trekking poles', 'Waterproof shoe covers (snow seasons)', 'Sonamarg trail topo map'],
     recommendedWear: 'Sturdy hiking boots, windcheater jacket, polarized sunglasses for snow glare',
@@ -94,7 +94,7 @@ export const LOCAL_EXPERIENCES: LocalExperience[] = [
       'Nestled deep inside the Wangath tributary valley just north of Kangan, Naranag is one of Kashmir’s most awe-inspiring historical wonders. Massive stone slabs carved over 1,200 years ago stand silently against dense alpine woods and roaring stream waters. After exploring the temple complexes, enjoy an easy uphill forest trail through ancient deodar woods.',
     localHostTip:
       'We arrange local Wangath village drivers who know the historic mythology of each temple shrine. Carry an empty water bottle—the spring water flowing from the stone spouts is exceptionally crisp and clean.',
-    image: getAssetUrl('assets/hotel/real_trek_guide.jpg'),
+    image: getAssetUrl('assets/aistudio/IMG-20261114-WA0090_0fe9c3dc.jpg'),
     guideAvailable: true,
     gearProvided: ['Walking sticks', 'Historical guidebook pamphlet', 'First-aid kit'],
     recommendedWear: 'Comfortable trekking footwear, modest full-length attire respectful of historical monuments',
@@ -126,7 +126,7 @@ export const LOCAL_EXPERIENCES: LocalExperience[] = [
       'For active trekkers and fitness enthusiasts, the approach toward Nichnai Pass delivers raw Himalayan wilderness. Climbing steadily from the valley floor through dense pine and fragrant silver birch, the trail opens into expansive boulder pastures where nomads camp during peak summer grazing.',
     localHostTip:
       'Our team packs a hearty trail lunch box including boiled local eggs, homemade Kashmiri potato parathas, walnut honey cake, and fresh apples from Hariganiwan.',
-    image: getAssetUrl('assets/hotel/real_scenic_mountains.jpg'),
+    image: getAssetUrl('assets/aistudio/IMG-20261114-WA0109_6b737613.jpg'),
     guideAvailable: true,
     gearProvided: ['Trekking poles', 'Thermal packed meal container', 'Trek emergency radio'],
     recommendedWear: 'Ankle-support hiking boots, layered thermal clothing, rain poncho',
@@ -159,7 +159,7 @@ export const LOCAL_EXPERIENCES: LocalExperience[] = [
       'Unlike heavily commercialized tourist spots, Hariganiwan retains the serene, heartfelt rhythm of traditional Kashmiri mountain life. Walk through cobbled village pathways lined with walnut and apple orchards, observe women weaving wicker willow baskets, and learn about time-honored heating traditions with clay Kangris and bukhari stoves.',
     localHostTip:
       'If visiting between September and October, our host family will show you how local walnuts are hand-harvested from towering 60-foot trees, washed in stream water, and sun-dried on open rooftops.',
-    image: getAssetUrl('assets/images/kashmiri_village_orchard_1794396329655.jpg'),
+    image: getAssetUrl('assets/aistudio/IMG-20261114-WA0094_35754765.jpg'),
     guideAvailable: true,
     gearProvided: ['Village escort guide', 'Hospitality tea tray', 'Shoe-friendly garden paths'],
     recommendedWear: 'Modest comfortable casual clothes, slip-on walking shoes',
@@ -190,7 +190,7 @@ export const LOCAL_EXPERIENCES: LocalExperience[] = [
       'Kangan has served as the key commercial intersection between Srinagar and the Ladakh-Sonamarg trade passes for centuries. Here, Kashmiri shopkeepers, Gujjar mountain dwellers, and Bakarwal horsemen congregate. It is the premier place in the Sindh Valley to source authentic saffron, dry fruits, and handcrafted kitchenware without tourist surcharges.',
     localHostTip:
       'Avoid middleman commissions. Our front desk concierge will introduce you to reputable local shop owners in Kangan where you can purchase certified A-grade saffron and genuine walnut wood carvings at fair local rates.',
-    image: getAssetUrl('assets/hotel/real_valley_destinations.jpg'),
+    image: getAssetUrl('assets/aistudio/IMG-20261114-WA0088_84fbc5e8.jpg'),
     guideAvailable: true,
     gearProvided: ['Resort driver transfer', 'Artisan shopping guide', 'Complimentary tote bag'],
     recommendedWear: 'Casual walking clothes, tote bag for spices and souvenirs',
@@ -221,7 +221,7 @@ export const LOCAL_EXPERIENCES: LocalExperience[] = [
       'Preng is famed across Kashmir for its crystal-clear natural spring waters bubbling straight from mountain aquifers into the Sindh riverbed. The area is a tranquil oasis of weeping willow trees, manicured garden terraces, and active fish breeding tanks where rainbow and brown trout thrive.',
     localHostTip:
       'Combine this visit with our resort kitchen’s fresh trout dinner. We can arrange for freshly sourced Preng trout to be prepared in authentic Kashmiri style with aromatic spices and saffron for your evening meal.',
-    image: getAssetUrl('assets/hotel/real_kashmir_sights_grid.jpg'),
+    image: getAssetUrl('assets/aistudio/IMG-20261114-WA0086_fb678a5c.jpg'),
     guideAvailable: true,
     gearProvided: ['Driver transfer assistance', 'Fishery entry guidance'],
     recommendedWear: 'Comfortable leisure wear and sun hat',
@@ -255,7 +255,7 @@ export const LOCAL_EXPERIENCES: LocalExperience[] = [
       'The swift glacial waters and riparian riverbed flora of Hariganiwan form a vital bio-corridor for Himalayan torrent birds. Early in the morning before sunbreak hits the valley floor, the riverbanks come alive with song. The mix of river boulders, wild mint, willow thickets, and towering blue pines provides perches for specialized mountain avifauna.',
     localHostTip:
       'Borrow our 8x42 field binoculars from the front desk. The quietest gravel bend 200m east of the hotel provides an unobstructed morning viewing hide for kingfishers with the sun at your back.',
-    image: getAssetUrl('assets/images/hariganiwan_morning_river_1794396327876.jpg'),
+    image: getAssetUrl('assets/aistudio/IMG-20261114-WA0106_43f4a568.jpg'),
     guideAvailable: true,
     gearProvided: ['8x42 High-definition binoculars', 'Kashmir avifauna pocket checklist', 'Morning tea flask'],
     recommendedWear: 'Muted earth-toned clothing (green/brown), warm dawn windbreaker jacket',
@@ -287,7 +287,7 @@ export const LOCAL_EXPERIENCES: LocalExperience[] = [
       'Climbing gently above the valley mist into the dense coniferous slopes of Kangan, this trail passes through mature stands of deodar and Himalayan silver fir. The dense canopy hosts a wealth of forest bird species, while the open grassy cliffs above serve as foraging grounds for pheasants and raptors including the Himalayan Griffon vulture.',
     localHostTip:
       'Listen for the loud, echoing flute-like whistle of the Blue Whistling Thrush right around dawn, followed by the territorial calls of the Koklass Pheasant across the ravine.',
-    image: getAssetUrl('assets/hotel/real_lawn_sitting.jpg'),
+    image: getAssetUrl('assets/aistudio/IMG-20261114-WA0108_4a38c2e6.jpg'),
     guideAvailable: true,
     gearProvided: ['Field spotting monocular', 'Bird field checklist', 'Walking sticks'],
     recommendedWear: 'Comfortable trail footwear, quiet non-rustling jackets, camera with zoom lens',
@@ -319,7 +319,7 @@ export const LOCAL_EXPERIENCES: LocalExperience[] = [
       'Recognized as Kashmir’s deepest and clearest lake, Manasbal is a protected aquatic sanctuary located in the lower Ganderbal plains. During autumn and winter, the lake’s calm reed beds and lotus zones provide an undisturbed haven for tens of thousands of migratory birds that cross the Himalayas.',
     localHostTip:
       'Our hotel arranges private rowboats (Shikaras) with seasoned local oarsmen who row silently near the reed banks so you can capture crisp telephoto wildlife photos without alarming the flocks.',
-    image: getAssetUrl('assets/hotel/real_exterior_lawns.jpg'),
+    image: getAssetUrl('assets/aistudio/IMG-20261114-WA0089_f51d7c8c.jpg'),
     guideAvailable: true,
     gearProvided: ['Hotel cab round-trip transfer', 'Shikara boat reservation', 'Bird identification chart'],
     recommendedWear: 'Warm layered clothing, sunglasses, telephoto camera lens or binoculars',

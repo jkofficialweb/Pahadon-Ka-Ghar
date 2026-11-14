@@ -104,7 +104,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
       id: `b-${Date.now()}`,
       reference,
       guestName: guestName.trim(),
-      guestEmail: guestEmail.trim() || 'guest@pahadon-ka-ghar.com',
+      guestEmail: guestEmail.trim() || HOTEL_INFO.email,
       guestPhone: guestPhone.trim(),
       checkIn,
       checkOut,
